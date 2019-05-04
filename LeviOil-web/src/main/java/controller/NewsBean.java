@@ -29,6 +29,10 @@ public class NewsBean {
 		System.out.println(newlist.toString());
 		return newlist;
 	}
+	public int addnews(news Newsa) {
+		newsService.addNews(Newsa);
+		return 0;
+	}
 	public int getId() {
 		return this.id;
 	}

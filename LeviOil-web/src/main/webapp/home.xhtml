@@ -29,7 +29,7 @@
 	    
 	    
 <div class="page-container ">
-
+<button class="btn btn-complete btn-cons">add News</button>
 <div class=" container p-l-0 p-r-0   container-fixed-lg sm-p-l-0 sm-p-r-0">
 <h:form>
          <h:dataTable class="table table-hover demo-table-search table-responsive-block dataTable no-footer" id="tableWithSearch" role="grid" aria-describedby="tableWithSearch_info" value = "#{newsBean.findall()}" var = "news">
@@ -43,9 +43,16 @@
             </h:column>
             <h:column>
                <f:facet name = "header">image</f:facet>
-               #{news.image}
+               <img src="#{news.image}"></img>
             </h:column>
-
+			<h:column>
+               <f:facet name = "header">Modify</f:facet>
+               <button class="btn btn-success btn-cons">Success</button>
+            </h:column>
+            <h:column>
+               <f:facet name = "header">Delete</f:facet>
+               <button class="btn btn-danger btn-cons">Danger</button>
+            </h:column>
          </h:dataTable>
       </h:form>
 
