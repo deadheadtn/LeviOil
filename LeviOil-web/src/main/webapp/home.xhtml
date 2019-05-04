@@ -29,8 +29,10 @@
 	    
 	    
 <div class="page-container ">
+
+<div class=" container p-l-0 p-r-0   container-fixed-lg sm-p-l-0 sm-p-r-0">
 <h:form>
-         <h:dataTable value = "#{newsBean.findall()}" var = "news">
+         <h:dataTable class="table table-hover demo-table-search table-responsive-block dataTable no-footer" id="tableWithSearch" role="grid" aria-describedby="tableWithSearch_info" value = "#{newsBean.findall()}" var = "news">
             <h:column>    				
                <f:facet name = "header">title</f:facet>    				
                #{news.title}
@@ -48,7 +50,7 @@
       </h:form>
 
 </div>
-
+</div>
 
 
 
