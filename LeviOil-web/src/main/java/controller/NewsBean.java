@@ -6,6 +6,7 @@ import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+
 import entity.news;
 import services.NewsService;
 
@@ -29,10 +30,13 @@ public class NewsBean {
 		System.out.println(newlist.toString());
 		return newlist;
 	}
-	public int addnews(news Newsa) {
-		newsService.addNews(Newsa);
+	public int addnews() {
+		System.out.println(title);
+		news n= new news(title,image,text);
+		newsService.addNews(n);
 		return 0;
 	}
+
 	public int getId() {
 		return this.id;
 	}

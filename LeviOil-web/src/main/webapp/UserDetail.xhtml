@@ -3,9 +3,8 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	xmlns:jsf="http://xmlns.jcp.org/jsf"
-	xmlns:p="http://primefaces.org/ui">
-<head >
+	xmlns:jsf="http://xmlns.jcp.org/jsf" xmlns:p="http://primefaces.org/ui">
+<head>
 
 <link rel="stylesheet" href="resources/css/UserD.css" />
 <link rel="stylesheet" href="resources/css/popup.css" />
@@ -14,133 +13,134 @@
 </head>
 <body>
 
-<h:form>
-<div id="wrapper">
-		
-<div id="container">
-			
-<div class="product-container">
-				
-<ul class="product-list">
+	<h:form>
+		<div id="wrapper">
 
-		<ui:repeat var="c" value="#{detailUserLog.findall()}" varStatus="status">	
-			    
-<li>
-						
-<div class="product">
-						    <a  class="product-image">
-							<h:graphicImage value="resources/images/#{c.profilePicture}" alt="Product"/>
-							</a>
-							
-<div class="quick-view-controller">						
-<p><h:commandButton class="btn-view" action="#{detailUserLog.LogDetail(c)}" value="Quick View"></h:commandButton></p>
-								
-							</div>
-						</div>
-					</li>
-					<li>
+			<div id="container">
 
-</li>
+				<div class="product-container">
 
-					</ui:repeat>
-						
-					
-					
-				</ul>
-			</div>
-		</div>
-	</div>
-	
-	
-<div class="mask" />
+					<ul class="product-list">
 
-	
-<div id="quick-view-pop-up">
-		
-<div class="quick-view-panel">
-			
+						<ui:repeat var="c" value="#{detailUserLog.findall()}"
+							varStatus="status">
 
-			
-<div class="quick-view-loading">
-				Quick View Loading... 
-			</div>
-			
+							<li>
 
-				
-<div class="image-large">
-					
-<ul>
-						
-<li><img src="resources/images/#{detailUserLog.image}" alt="Product" /></li>
-						
+								<div class="product">
+									<a class="product-image"> <h:graphicImage
+											value="resources/images/#{c.profilePicture}" alt="Product" />
+									</a>
+
+									<div class="quick-view-controller">
+										<p>
+											<h:commandButton class="btn-view"
+												action="#{detailUserLog.LogDetail(c)}" value="Quick View"></h:commandButton>
+										</p>
+
+									</div>
+								</div>
+							</li>
+							<li></li>
+
+						</ui:repeat>
+
+
 
 					</ul>
-					
 				</div>
-
-				
-			
-<div class="detail">
-				
-<div class="product-details">
-					
-<h3 class="product-name">
-
-<h:outputText value="#{detailUserLog.name}" /></h3>
-<br></br>
-
-Email: <h:outputText value="#{detailUserLog.email}" />
-<br></br>
-Address: <h:outputText value="#{detailUserLog.address}" />
-<br></br>
-
-Phone Number: <h:outputText value="#{detailUserLog.phonenumber}" />
-<br></br>
-Role: <h:outputText value="#{detailUserLog.role}" />
-<br></br>
-
-<ul class="product-list">
-<li>
-
-<div class="credit-circle">
-   <div class="number-in-circle">
-     <h:outputText value="#{detailUserLog.failureAttemptNumber}" />
-   </div> 
-   Failure Login Attempts
-  </div>
- 	
-	</li>
-	<li>
-
-<div class="credit-circle">
-   <div class="number-in-circle">
-     <h:outputText value="#{detailUserLog.successfulLoginnumber}" />
-   </div> 
-   Successful Login 
-  </div>
-  	
-	</li>	
-	<li>
-
-<div class="credit-circle">
-   <div class="number-in-circle">
-     <h:outputText value="#{detailUserLog.updatenumber}" />
-   </div> 
-   Update image  
-  </div>
-  	
-	</li>			
-</ul>
-
-				</div>
-				
 			</div>
 		</div>
-	</div>
-	
-	
+
+
+		<div class="mask" />
+
+
+		<div id="quick-view-pop-up">
+
+			<div class="quick-view-panel">
+
+
+
+				<div class="quick-view-loading">Quick View Loading...</div>
+
+
+
+				<div class="image-large">
+
+					<ul>
+
+						<li><img src="resources/images/#{detailUserLog.image}"
+							alt="Product" /></li>
+
+
+					</ul>
+
+				</div>
+
+
+
+				<div class="detail">
+
+					<div class="product-details">
+
+						<h3 class="product-name">
+
+							<h:outputText value="#{detailUserLog.name}" />
+						</h3>
+						<br></br> Email:
+						<h:outputText value="#{detailUserLog.email}" />
+						<br></br> Address:
+						<h:outputText value="#{detailUserLog.address}" />
+						<br></br> Phone Number:
+						<h:outputText value="#{detailUserLog.phonenumber}" />
+						<br></br> Role:
+						<h:outputText value="#{detailUserLog.role}" />
+						<br></br>
+
+						<ul class="product-list">
+							<li>
+
+								<div class="credit-circle">
+									<div class="number-in-circle">
+										<h:outputText value="#{detailUserLog.failureAttemptNumber}" />
+									</div>
+									Failure Login Attempts
+								</div>
+
+							</li>
+							<li>
+
+								<div class="credit-circle">
+									<div class="number-in-circle">
+										<h:outputText value="#{detailUserLog.successfulLoginnumber}" />
+									</div>
+									Successful Login
+								</div>
+
+							</li>
+							<li>
+
+								<div class="credit-circle">
+									<div class="number-in-circle">
+										<h:outputText value="#{detailUserLog.updatenumber}" />
+									</div>
+									Update image
+								</div>
+
+							</li>
+						</ul>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
 	</h:form>
 	<script src="resources/js2/jquery.js"></script>
 	<script src="resources/js2/chart.js"></script>
-	
-</body></html>
+
+</body>
+</html>
