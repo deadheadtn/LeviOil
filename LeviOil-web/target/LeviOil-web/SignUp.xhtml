@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<head>
+<link rel="stylesheet" href="./resources/css/d.css" />
+
+</head>	
+<head />
+<body>
+<div class="container">
+  
+<h2>Signup</h2>
+  
+<div class="row">
+    <h:form class="col s12">
+      
+<div class="row">
+        
+<div class="input-field col s6">
+          <h:inputText id="first_name"  class="validate" />
+          <h:outputLabel for="first_name">First Name</h:outputLabel>
+        </div>
+        
+<div class="input-field col s6">
+          <h:inputText id="last_name"  class="validate" />
+          <h:outputLabel for="last_name">Last Name</h:outputLabel>
+        </div>
+      </div>
+            
+<div class="row">
+        
+<div class="input-field col s12">
+          <h:inputText id="email" type="email" class="validate" />
+          <h:outputLabel for="email" data-error="wrong" data-success="right">Email</h:outputLabel>
+        </div>
+      </div>
+            
+<div class="row">
+        
+<div class="input-field col s12">
+          <h:inputText id="password"  class="validate" />
+          <h:outputLabel for="password">Password</h:outputLabel>
+        </div>
+      </div>
+      <h:commandButton class="btn btn-flat btn-large waves-effect waves-dark white grey-text text-darken-3" type="submit" name="action" value="Create Account"/>
+ 
+    </h:form>
+  </div></div>
+  <footer id="footer">
+  
+<div class="container center">
+    
+<p>Made with <i class="material-icons red-text text-lighten-3 tiny">favorite</i> By <a href="https://www.thinkmilkdesign.co.uk" class="green-text text-lighten-2" target="_blank">Shane Geach</a></p>
+  </div></footer></body></html>

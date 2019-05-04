@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui">
+	<head>
+  
+<meta charset="utf-8" />
+  
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  
+<title>Sign up</title>
+  <link rel="stylesheet" href="./resources/css/styl.css" />
+  <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+  </head>
+
+<body>
+  
+<div class="container">
+    <section class="register">
+      
+<h1>Register</h1>
+      <h:form method="post" action="index.html" enctype="multipart/form-data">
+      
+<div class="reg_section personal_info">
+      
+<h3>Your Personal Information</h3>
+      <h:inputText id="u" type="text" name="username" value="#{inscriptionBean.username}" a:placeholder="Your Desired Username" />
+      <h:inputText id ="f" type="text" name="FirstName" value="#{inscriptionBean.firstName}" a:placeholder="Your First Name" />
+      
+        <h:inputText id="l" type="text" name="LastName" value="#{inscriptionBean.lastName}" a:placeholder="Your Last Name" />
+       
+          <h:inputText id ="email" type="text" name="email" value="#{inscriptionBean.email}" a:placeholder="Your E-mail Address" />
+            <h:inputText id="ph" type="text" name="Phone Number" value="#{inscriptionBean.phonenumber}" a:placeholder="Your Phone number" />
+        
+      </div>
+      
+<div class="reg_section password">
+      
+<h3>Your Password and Security Question</h3>
+      <h:inputText id="password" type="password" name="password" value="#{inscriptionBean.password}" a:placeholder="Your Password" />
+      <h:inputText id="Rpassword" type="password" name="confirm" value="#{inscriptionBean.repPassword}" a:placeholder="Confirm Password" />
+
+      <h:selectOneMenu value="Security Question">
+    							  <f:selectItem itemLabel="Choose a Question" itemValue="" />
+								<f:selectItem itemValue = "#{inscriptionBean.securityQ}" itemLabel = "How are you ?" /> 
+  								 <f:selectItem itemValue ="#{inscriptionBean.securityQ}" itemLabel = "How old are you ?" /> 
+							</h:selectOneMenu>
+      <h:inputTextarea name="textarea" id="answer" value="#{inscriptionBean.answer}">Your Answer </h:inputTextarea>
+      
+
+      </div>
+      
+<div class="reg_section password">
+      
+<h3>Your Address</h3>
+     
+      <h:inputTextarea name="textarea" id="address" value="#{inscriptionBean.address}">Your Full Address</h:inputTextarea>
+       
+      </div>
+      
+
+       
+       
+                 <h:inputFile  value="#{inscriptionBean.image}" mode="advanced" dragDropSupport="false"  sizeLimit="100000" fileLimit="3" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />
+                  
+
+          
+       
+    
+<p class="submit"><h:commandButton type="submit" name="commit" value="Sign Up" action="#{inscriptionBean.DoInscription()}"/></p>
+      </h:form>
+    </section>
+  </div>
+  
+</body></html>

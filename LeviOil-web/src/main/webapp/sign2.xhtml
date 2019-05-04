@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./resources/css/sign2.css" />
+  
+  
+  </head>
+<body>
+
+  
+  <h:form id="formwrapper" enctype="multipart/form-data">
+    <!-- Progressbar -->
+    
+<ul id="progressbar">
+      
+<li class="active">Username</li>
+      
+<li>Account</li>
+      
+<li>Data</li>
+      
+<li>Career</li>
+<li> Picture</li>
+    </ul>
+   
+    <!-- Login Form Divs -->
+    <!-- Username -->
+    <fieldset>
+      
+<h2 class="login-title">Welcome!</h2>
+      
+<h3 class="login-subtitle">First select a Username.</h3>
+      <h:inputText  type="text" id="username"  a:placeholder="Username" title="The username is required!" required="" value="#{inscriptionBean.username}" />
+      <!--<i class="fa fa-user"></i>-->
+      <h:inputText type="button" name="next" class="next button" value="Next" />
+    </fieldset>
+    <!-- Password -->
+    <fieldset>
+      
+<h2 class="login-title user" />
+      
+<h3 class="login-subtitle">Now setup your Account </h3>
+      <h:inputText type="email" class="form" id="email" title="" a:placeholder="Email" value="#{inscriptionBean.email}" />
+      <h:inputText type="password" class="form" id="password" a:placeholder="Password" title="" value="#{inscriptionBean.password}" />
+      <h:inputText type="password" class="form" id="Rpassword" pattern="\w{6,}" a:placeholder="Confirm Password" title="" value="#{inscriptionBean.repPassword}" />
+      <!--<i class="fa fa-lock"></i>-->
+      <h:inputText type="button" name="previous" class="previous button" value="Previous" />
+      <h:inputText type="button" name="next" class="next button" value="Next" />
+    </fieldset>
+    <!-- Phone -->
+    <fieldset>
+      
+<h2 class="login-title">Personal Data</h2>
+      
+<h3 class="login-subtitle">Next insert your personal Data.</h3>
+      <h:inputText type="text" id="fname" a:placeholder="FirstName" title="" value="#{inscriptionBean.firstName}" />
+            <h:inputText type="text" id="lname" a:placeholder="LastName" title="" value="#{inscriptionBean.lastName}" />
+      <h:inputText type="text" id="adress" a:placeholder="Adress" title="" value="#{inscriptionBean.address}" />
+      <h:inputText type="tel" class="form" id="tel" title="" a:placeholder="Phonenumber" required="" value="#{inscriptionBean.phonenumber}"  />
+      <!--<i class="fa fa-phone"></i>-->
+      <h:inputText type="button" name="previous" class="previous button" value="Previous" />
+      <h:inputText type="button" name="next" class="next button" value="Next" />
+    </fieldset>
+    <!-- Email -->
+    <fieldset>
+      
+<h2 class="login-title">Career</h2>
+      
+<h3 class="login-subtitle">Security </h3>     
+<h:selectOneMenu value="Security Question">
+    							  <f:selectItem itemLabel="Choose a Question" itemValue="" />
+								<f:selectItem itemValue = "#{inscriptionBean.securityQ}" itemLabel = "How are you ?" /> 
+  								 <f:selectItem itemValue ="#{inscriptionBean.securityQ}" itemLabel = "How old are you ?" /> 
+							</h:selectOneMenu>
+	  <h:inputText type="text" id="university" a:placeholder="Your Answer" title="" value="#{inscriptionBean.answer}"/>
+      <!--<i class="fa fa-envelope"></i>-->
+      <h:inputText type="button" name="previous" class="previous button" value="Previous" />
+      <h:inputText type="button" name="next" class="next button" value="Next" />
+    </fieldset>
+      <fieldset>
+      
+<h2 class="login-title">Picture</h2>
+      
+<h3 class="login-subtitle">Finally Your Profile Picture</h3>     
+    <h:inputFile  value="#{inscriptionBean.image}" mode="advanced" dragDropSupport="false"  sizeLimit="100000" fileLimit="3" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />
+
+      <!--<i class="fa fa-envelope"></i>-->
+      <h:inputText type="button" name="previous" class="previous button" value="Previous" />
+      <h:commandButton action="#{inscriptionBean.DoInscription()}" value="Done" />
+    </fieldset>
+  </h:form>
+ <script src="resources/js/jquery3.2.1.min.js"></script>
+ <script src="resources/js/sign2.js"></script>
+<script src="resources/js/jj.js"></script>
+<script src="resources/js/jq.js"></script>
+
+</body></html>

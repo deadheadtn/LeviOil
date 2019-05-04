@@ -1,0 +1,16 @@
+avr. 27, 2019 5:04:31 AM services.UserLogService sendlog
+AVERTISSEMENT: Seddik Hamdi Three failed  Login attempts
+avr. 27, 2019 5:04:53 AM services.UserLogService sendlog
+AVERTISSEMENT: Seddik Hamdi Three failed  Login attempts
+avr. 27, 2019 5:05:43 AM services.UserLogService sendlog
+AVERTISSEMENT: Seddik welcome Three failed  Login attempts
+mai 01, 2019 1:57:33 AM services.UserLogService sendlog
+AVERTISSEMENT: gaaas gaaas Three failed  Login attempts
+mai 01, 2019 1:58:55 AM services.UserLogService sendlog
+INFOS: gaaas gaaas Successful Login 
+mai 02, 2019 2:13:09 AM services.UserLogService sendlog
+INFOS: Seddik Hamdi Successful Login 
+mai 02, 2019 2:13:50 AM services.UserLogService sendlog
+INFOS: gaaas gaaas Successful Login 
+mai 02, 2019 2:14:44 AM services.UserLogService sendlog
+INFOS: Seddik Hamdi Successful Login 

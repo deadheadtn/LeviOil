@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<head>
+<link rel="stylesheet" href="./resources/css/c.css" />
+
+</head>	
+<body>
+<div class="login">
+	
+<h1>Login</h1>
+    <h:form method="post">
+    	<h:inputText value="#{loginBean.login}" name="u" placeholder="Username" required="true" />
+        <h:inputSecret   value="#{loginBean.password}" name="p" placeholder="Password" required="true" />
+        <h:commandButton id="btn" type="submit" action="#{loginBean.dologin()}" class="btn btn-primary btn-block btn-large" value="Let me in"/>
+        <br></br>
+        <br></br>
+        <h:commandButton id="btn2" type="submit"  class="btn btn-primary btn-block btn-large" value="Be a Member"/>
+        
+        <h:message for="btn" />
+    </h:form></div></body></html>
