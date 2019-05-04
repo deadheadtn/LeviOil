@@ -6,11 +6,18 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
 	xmlns:p="http://primefaces.org/ui">
-<head>
-  <link rel="stylesheet" href="./resources/css/ff.css" />
+<h:head>
+  <link rel="stylesheet" href="../../resources/css/ff.css" />
 
-</head>
+</h:head>
 <body>
+<h:form>
+<p:growl id="messages" showDetail="true" sticky="true" />
+ 
+    <p:idleMonitor timeout="5000">
+        <p:ajax event="idle" listener="#{inscriptionBean.onIdle()}"  update="messages" />
+        <p:ajax event="active" listener="#{inscriptionBean.onActive()}" update="messages" />
+    </p:idleMonitor>
 <div class="profile-wrapper">
 	
 <div class="profile-image">
@@ -24,19 +31,19 @@
 		
 <div class="content">
 			
-<h3>About You</h3>
+<h3>You are our #{loginBean.user.role}</h3>
 			
-<p>#Graphic / #Web #Designer &amp; #frontend #developer fuelled by coffee. Longtime lover of skiing and mountain living. Occasional blogger.</p>
+<p>Email: #{loginBean.user.email} </p>
 			
-<p class="link one"><i class="fa fa-link" aria-hidden="true" /><a href="http://nickylew.com" target="_blank">www.nickylew.com</a></p>
+<p class="link one"><i class="fa fa-link" aria-hidden="true" /><a href="http://nickylew.com" target="_blank">Phone Number : #{loginBean.user.phoneNumber}</a></p>
 			
-<p class="link"><i class="fa fa-globe" aria-hidden="true" />United Kingdom</p>
+<p class="link"><i class="fa fa-globe" aria-hidden="true" />Address: #{loginBean.user.address}</p>
 		</div>
 		
 <div class="stats">
 			
 <div class="stat">
-				<span class="number">482</span> Followers
+				<span class="number"></span> <h:link value="Update u'r profile picture"/>
 			</div>
 			
 <div class="stat">
@@ -49,4 +56,6 @@
 		</div>
 		
 
-	</div></div></body></html>
+	</div></div>
+	</h:form>
+	</body></html>

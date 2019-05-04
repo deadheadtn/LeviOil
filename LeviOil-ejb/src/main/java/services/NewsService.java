@@ -1,14 +1,21 @@
 package services;
 
+import java.sql.Date;
 import java.util.List;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
+import entity.Contrat;
+import entity.Type;
+import entity.User;
 import entity.news;
 import interfaces.NewsRemote;
+import interfaces.UserRemote;
 @Stateless
 @LocalBean
 public class NewsService implements NewsRemote {
