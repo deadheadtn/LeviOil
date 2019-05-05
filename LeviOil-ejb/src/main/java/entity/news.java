@@ -4,7 +4,6 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 
-
 /**
  * The persistent class for the news database table.
  * 
@@ -62,6 +61,5 @@ public class news implements Serializable {
 		this.text=text;
 		this.image=image;
 	}
-
 
 }

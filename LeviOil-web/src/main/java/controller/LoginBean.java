@@ -57,7 +57,7 @@ public class LoginBean {
 			if (checkpass(password)==true) {
 				if (user.getRole() == Role.Admin ) {
 					
-					navigateTo = "UserDetail?faces-redirect=true";
+					navigateTo = "/pages/admin/index?faces-redirect=true";
 					loggedIn = true;
 					LocalDate sdate=LocalDate.now();
 					SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
@@ -70,7 +70,7 @@ public class LoginBean {
 					
 							}
 				else if (user.getRole() != Role.Admin) {
-					navigateTo = "NewFile?faces-redirect=true";
+					navigateTo = "pages/client/NewFile?faces-redirect=true";
 					loggedIn = true;
 					LocalDate sdate=LocalDate.now();
 					SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
@@ -81,7 +81,7 @@ public class LoginBean {
 					log=new UserLog(s," Successful Login ", user);
 					userlogservice.AddLog(log);
 					
-					navigateTo = "NewFile?faces-redirect=true";
+					navigateTo = "/pages/client/NewFile?faces-redirect=true";
 					loggedIn = true;
 					
 							}
@@ -92,6 +92,7 @@ public class LoginBean {
 					
 					i=i+1;
 					int s=3-i;
+					
 					FacesContext.getCurrentInstance().addMessage("form:btn",
 							new FacesMessage("You Have Only "+s+" login Atttempts"));
 				}
@@ -108,7 +109,7 @@ public class LoginBean {
 			log=new UserLog(s,"Three failed Login attempts", user);
 			userlogservice.AddLog(log);
 			userservice.DisactivateAccount(user.getId());
-			navigateTo = "login?faces-redirect=true";
+			navigateTo = "/pages/client/login?faces-redirect=true";
 				}
 			}
 		
@@ -147,8 +148,9 @@ public class LoginBean {
 	
 	
 	public String dosignup() {
-		
-		return "sign2?faces-redirect=true";
+		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+
+		return "/pages/client/login?faces-redirect=true";
 		
 	}
 	
@@ -211,6 +213,6 @@ public class LoginBean {
 	public void setUserlogservice(UserLogService userlogservice) {
 		this.userlogservice = userlogservice;
 	}
-	
+
 	
 }

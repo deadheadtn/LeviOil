@@ -79,6 +79,11 @@ public class UserLogService implements LogUserRemote {
 		        	 logger.info(u.getFullName()+" Successful Login ");
 
 		         }
+    else if(msg.equals("User registred")) {
+		        	 
+		        	 logger.info(u.getFullName()+" User registred ");
+
+		         }
 
 		    } catch (SecurityException e) {  
 		        e.printStackTrace();  
@@ -95,6 +100,23 @@ public class UserLogService implements LogUserRemote {
 	public long FailureAttemptForUser(User u , String log) {
 		 long Singleusermsg= (long)(em.createQuery("SELECT COUNT(*) FROM userlog l where l.user.id=:id AND l.Log=:log")
 				 .setParameter("id",u.getId()).setParameter("log", log).getSingleResult());
+		
+		return Singleusermsg;
+	}
+	
+	@Override
+	public long  LogN (String log,int month) {
+		long Singleusermsg= (long)(em.createQuery("SELECT COUNT(*) FROM userlog l where l.Log=:log"
+				+ " AND MONTH(l.logDate)=:m")
+				 .setParameter("log", log).setParameter("m", month).getSingleResult());
+		
+		return Singleusermsg;
+	}
+	
+	@Override
+	public long allLogNumber(String log) {
+		 long Singleusermsg= (long)(em.createQuery("SELECT COUNT(*) FROM userlog l where l.Log=:log")
+				 .setParameter("log", log).getSingleResult());
 		
 		return Singleusermsg;
 	}

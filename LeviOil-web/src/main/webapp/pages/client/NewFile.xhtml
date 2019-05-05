@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+  <link rel="stylesheet" href="../../resources/css/ff.css" />
+
+</h:head>
+<body>
+<h:form>
+<p:growl id="messages" showDetail="true" sticky="true" />
+ 
+    <p:idleMonitor timeout="5000">
+        <p:ajax event="idle" listener="#{inscriptionBean.onIdle()}"  update="messages" />
+        <p:ajax event="active" listener="#{inscriptionBean.onActive()}" update="messages" />
+    </p:idleMonitor>
+<div class="profile-wrapper">
+	
+<div class="profile-image">
+		<h:graphicImage id="img" value="/resources/images/#{loginBean.user.profilePicture}" /> 
+	</div>
+	
+	
+<h2 class="profile-title"><h:outputText value="#{loginBean.user.firstName}" /> <span><h:outputText value="#{loginBean.user.lastName}" /></span></h2>
+	
+<div class="profile-info">
+		
+<div class="content">
+			
+<h3>You are our #{loginBean.user.role}</h3>
+			
+<p>Email: #{loginBean.user.email} </p>
+			
+<p class="link one"><i class="fa fa-link" aria-hidden="true" /><a href="http://nickylew.com" target="_blank">Phone Number : #{loginBean.user.phoneNumber}</a></p>
+			
+<p class="link"><i class="fa fa-globe" aria-hidden="true" />Address: #{loginBean.user.address}</p>
+		</div>
+		
+<div class="stats">
+			
+<div class="stat">
+				<span class="number"></span> <h:link value="Update u'r profile picture"/>
+			</div>
+			
+<div class="stat">
+				<span class="number">1,061</span> Following
+			</div>
+			
+<div class="stat">
+				<span class="number">15</span> Ski trips
+			</div>
+		</div>
+		
+
+	</div></div>
+	</h:form>
+	</body></html>
