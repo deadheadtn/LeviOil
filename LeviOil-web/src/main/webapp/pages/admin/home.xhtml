@@ -33,7 +33,7 @@
 </button>
 <div class=" container p-l-0 p-r-0   container-fixed-lg sm-p-l-0 sm-p-r-0">
 
-         <h:dataTable class="table table-hover demo-table-search table-responsive-block dataTable no-footer" id="tableWithSearch" role="grid" aria-describedby="tableWithSearch_info" value = "#{newsBean.findall()}" var = "news">
+         <h:dataTable class="table table-hover demo-table-search table-responsive-block dataTable no-footer" id="tableWithSearch" role="grid" aria-describedby="tableWithSearch_info" value = "#{newsBean.findall()}" var="news">
             <h:column>    				
                <f:facet name = "header">title</f:facet>    				
                #{news.title}
@@ -53,7 +53,7 @@
             <h:column>
                <f:facet name = "header">Delete</f:facet>
                <h:form>
-                <h:commandButton action="#{newsBean.delete(news.id)}" class="btn btn-danger btn-cons" value="Delete"/>
+                <h:commandButton action="#{newsBean.delete(news)}" type="submit" class="btn btn-danger btn-cons" value="Delete"/>
                 </h:form>
             </h:column>
          </h:dataTable>
