@@ -17,4 +17,5 @@ public interface GasStationIservice {
 	public List<GasStation> findAllGasStations();
 	public List<GasStation> findGasStationbynameuser(String Name);
 	public GasStation findGasbyname(String Name);
+	GasStation getGasStationByUser(int id);
 }

@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<title>Add Fuel Order</title>
+	<style type="text/css">
+.btnWidth {
+	width: 80px;
+}
+</style>
+</h:head>
+<h:body>
+	<h:form id="createFuelOrder" class="form-horizontal">
+		<div class="form-group">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<h2>Create Fuel Order</h2>
+			</div>
+		</div>
+		<hr />
+		<div class="form-group">
+			<h:outputLabel for="quantity" class="control-label col-sm-4">Quantity :</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="quantity" value="#{fuelOrderBean.quantity}"
+					class="form-control" validatorMessage="Quantity is required">
+					<f:validateRequired />
+				</h:inputText>
+				<h:message for="quantity" />
+			</div>
+		</div>
+
+		<div class="form-group">
+			<h:outputLabel for="fuel" class="control-label col-sm-4">Fuel :</h:outputLabel>
+			<div class="col-sm-4">
+				<h:selectOneMenu id="fuel" value="#{fuelOrderBean.fuel.id}"
+					class="form-control" validatorMessage="Quantity is required">
+					<f:validateRequired />
+					<f:selectItems value="#{fuelOrderBean.fuels}" var="fuel"
+						itemValue="#{fuel.id}" itemLabel="#{fuel.type}" />
+				</h:selectOneMenu>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<div class="col-sm-2">
+					<h:commandButton rendered="${fuelOrderBean.idToBeUpdated==0}"
+						value="Add" action="#{fuelOrderBean.addFuelOrder(fuelOrderBean)}"
+						class="btn btn-success btnWidth" />
+					<h:commandButton rendered="${fuelOrderBean.idToBeUpdated!=0}"
+						value="Edit" action="#{fuelOrderBean.updateFuelOrder()}"
+						class="btn btn-success btnWidth" />
+				</div>
+			</div>
+		</div>
+	</h:form>
+						<h:link value="Display Order List" outcome="/pages/client/listFuelOrder"/>
+</h:body>
+</html>
