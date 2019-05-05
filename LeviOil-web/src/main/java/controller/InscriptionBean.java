@@ -25,6 +25,8 @@ import org.primefaces.model.UploadedFile;
 
 import entity.Role;
 import entity.User;
+import entity.UserLog;
+import services.UserLogService;
 import services.UserService;
 
 @ManagedBean
@@ -32,6 +34,9 @@ import services.UserService;
 public class InscriptionBean {
 	@EJB
 	UserService userservice;
+	@EJB
+	UserLogService userlogservice;
+	private UserLog log;
 	private String username;
 	private String FirstName;
 	private String LastName;
@@ -107,7 +112,6 @@ public class InscriptionBean {
 
 			try {
 				Files.copy(from, to, options);
-				FacesContext.getCurrentInstance().addMessage("form:answer", new FacesMessage(image.getSubmittedFileName()));
 
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -136,8 +140,14 @@ public class InscriptionBean {
 		 	Date s=Date.valueOf(format.format(startdate));
 			user = new User(username, ph, FirstName, LastName, Email,uuu+".jpeg", Phonenumber, Address, 1, Role.client, ah,SecurityQ,s);
 			userservice.addUser(user);
+			
+			
+			userlogservice.sendlog("User registred", user);
+			
+			log=new UserLog(s,"User registred", user);
+			userlogservice.AddLog(log);
 
-			navigateTo = "login?faces-redirect=true";
+			navigateTo = "/pages/client/login?faces-redirect=true";
 
 		}
 
@@ -248,7 +258,18 @@ public class InscriptionBean {
 	public void setUser(User user) {
 		this.user = user;
 	}
-
+	public void onIdle() {
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, 
+                                        "No activity.", "What are you doing over there?"));
+      
+    }
+ 
+    public String onActive() {
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN,
+                                        "Welcome Back", "Well, that's a long coffee break!"));
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        return "/pages/client/login?faces-redirect=true/";
+    }
 	
 
 }

@@ -1,0 +1,6 @@
+controller\DetailUserLog.class
+controller\BCrypt.class
+controller\NewsBean.class
+controller\LoginBean.class
+controller\ChartBean.class
+controller\InscriptionBean.class

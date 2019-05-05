@@ -2,9 +2,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"   
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      >
-    <body>
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"      
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+      <h:head></h:head>
+    <h:body>
+    <h:form>
 	    <ui:composition>
 <div class="header">
 <div class="container">
@@ -22,8 +25,7 @@
 <div class="notification-body scrollable">
 
 <div class="notification-item unread clearfix">
-
-<div class="heading open"><a href="#" class="text-complete pull-left"><i class="pg-map fs-16 m-r-10" /><span class="bold">Carrot Design</span><span class="fs-12 m-l-10">David Nester</span></a>
+<div class="heading open"><a href="#" class="text-complete pull-left"><i class="pg-map fs-16 m-r-10" /><span class="bold">Carrot Design</span><span class="fs-12 m-l-10">#{loginBean.user.fullName}<br></br>sq;d,sq;:,d  </span></a>
 <div class="pull-right">
 <div class="thumbnail-wrapper d16 circular inline m-t-15 m-r-10 toggle-more-details">
 <div><i class="fa fa-angle-left" /></div></div><span class=" time">few sec ago</span></div>
@@ -54,7 +56,7 @@ Commented on john Smiths wall.
  
 <div class="notification-item unread clearfix">
 <div class="heading">
-<div class="thumbnail-wrapper d24 circular b-white m-r-5 b-a b-white m-t-10 m-r-10"><img width="30" height="30" data-src-retina="resources/assets/img/profiles/1x.jpg" data-src="resources/assets/img/profiles/1.jpg" alt="" src="resources/assets/img/profiles/1.jpg" /></div><a href="#" class="text-complete pull-left"><span class="bold">Revox Design Labs</span><span class="fs-12 m-l-10">Owners</span></a><span class="pull-right time">11:00pm</span></div>
+<div class="thumbnail-wrapper d24 circular b-white m-r-5 b-a b-white m-t-10 m-r-10"><img style="width:30% ;height:30px"  src="../../resources/images/#{loginBean.user.profilePicture}" /></div></div>
 
 <div class="option" data-toggle="tooltip" data-placement="left" title="mark as read"><a href="#" class="mark" /></div>
 </div>
@@ -69,24 +71,30 @@ Commented on john Smiths wall.
 <a href="#" class="search-link d-lg-inline-block d-none" data-toggle="search"><i class="pg-search" />Type anywhere to <span class="bold">search</span></a></div>
 <div class="d-flex align-items-center">
 
-<div class="pull-left p-r-10 fs-14 font-heading d-lg-inline-block d-none"><span class="semi-bold">David</span> <span class="">Nest</span></div>
+<div class="pull-left p-r-10 fs-14 font-heading d-lg-inline-block d-none"><span class="semi-bold">#{loginBean.user.firstName}</span> <span class="">#{loginBean.user.lastName}</span></div>
 <div class="dropdown pull-right sm-m-r-5"><button class="profile-dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="thumbnail-wrapper d32 circular inline"><img src="resources/assets/img/profiles/avatar.jpg" alt="" data-src="resources/assets/img/profiles/avatar.jpg" data-src-retina="resources/assets/img/profiles/avatar_small2x.jpg" width="32" height="32" /></span></button>
-<div class="dropdown-menu dropdown-menu-right profile-dropdown" role="menu"><a href="#" class="dropdown-item"><i class="pg-settings_small" /> Settings</a><a href="#" class="dropdown-item"><i class="pg-outdent" /> Feedback</a><a href="#" class="dropdown-item"><i class="pg-signals" /> Help</a><a href="#" class="clearfix bg-master-lighter dropdown-item"><span class="pull-left">Logout</span><span class="pull-right"><i class="pg-power" /></span></a></div></div>
+<div class="dropdown-menu dropdown-menu-right profile-dropdown" role="menu"><a href="#" class="dropdown-item"><i class="pg-settings_small" /> Settings</a><a href="#" class="dropdown-item"><i class="pg-outdent" /> Feedback</a><a href="#" class="dropdown-item"><i class="pg-signals" /> Help</a><h:commandButton class="pull-left" value="log out" action="#{loginBean.dosignup()}"/><span class="pull-right"><i class="pg-power" /></span></div></div>
 <a href="#" class="header-icon pg pg-alt_menu btn-link m-l-10 sm-no-margin d-inline-block" data-toggle="quickview" data-toggle-element="#quickview" /></div></div>
 <div class="header-inner justify-content-start header-lg-height title-bar">
-<div class="brand inline align-self-end"><img src="resources/assets/img/logo_s.png" alt="logo" data-src="resources/assets/img/logo_s.png" data-src-retina="resources/assets/img/logo_s_2x.png" width="17" height="20" /></div>
+<div class="brand inline align-self-end"></div>
 <h2 class="page-title align-self-end">
-dashboard
+Welcome To Your Dashboard #{loginBean.user.firstName}
+<br></br>
+<h:commandButton value="log off" action="#{loginBean.dosignup()}"/>
+<img src="../../resources/images/#{loginBean.user.profilePicture}" style="weight:20% ;height:20px"></img>
 </h2></div>
 <div class="menu-bar header-sm-height" data-pages-init="horizontal-menu" data-hide-extra-li="4"><a href="#" class="btn-link toggle-sidebar d-lg-none pg pg-close" data-toggle="horizontal-menu"></a>
 <ul>
 <li class=" active"><a href="index.jsf">Dashboard</a></li>
 <li class=" active" ><a href="home.jsf">News</a></li>
+<li class=" active" ><h:commandLink action="UserDetail.jsf" value="User Detail" /></li>
+<li class=" active" ><h:commandLink action="chart.jsf" value="Log statistics" /></li>
 </ul>
 </div>
 </div>
 </div>
 
    </ui:composition>
-    </body>
+   </h:form>
+    </h:body>
 </html>

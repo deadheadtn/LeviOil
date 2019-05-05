@@ -27,9 +27,15 @@ public class GasStation implements Serializable {
 	private float latitude ;
 	private float longitude;
 	private String image;
+	private String address;
+	
 	//Added by Amir
 	@OneToOne(fetch = FetchType.EAGER)
 	private User manager;
+	
+
+	@OneToMany(mappedBy="gasStation")
+    private List<FuelOrder> fuelOrders;
 	
 	@OneToMany(fetch = FetchType.EAGER,mappedBy="gasStationWorker") 
 	private List<User> workers;
@@ -236,6 +242,24 @@ public void setUser(User user) {
 		User = user;
 	}
 	
+	
+	
+	@Override
+	public String toString() {
+		return "GasStation [IdGas=" + IdGas + ", name=" + name + ", address=" + address + ", street=" + street + "]";
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public List<FuelOrder> getFuelOrders() {
+		return fuelOrders;
+	}
+	public void setFuelOrders(List<FuelOrder> fuelOrders) {
+		this.fuelOrders = fuelOrders;
+	}
 	public User getManager() {
 		return manager;
 	}

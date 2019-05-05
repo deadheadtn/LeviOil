@@ -42,8 +42,8 @@ public class Fuel implements Serializable {
     @OneToMany(mappedBy="fuelType")
     private List<OilWell> oilWell;
     
-    @ManyToOne
-    private BarrelInventory barrelInventory;
+    @OneToMany(mappedBy="fuel")
+    private List<BarrelInventory> barrelInventories;
     
     private float price;
 
@@ -86,13 +86,13 @@ public class Fuel implements Serializable {
 	}
 
 
-	public BarrelInventory getBarrelInventory() {
-		return barrelInventory;
+	public List<BarrelInventory> getBarrelInventory() {
+		return barrelInventories;
 	}
 
 
-	public void setBarrelInventory(BarrelInventory barrelInventory) {
-		this.barrelInventory = barrelInventory;
+	public void setBarrelInventory(List<BarrelInventory> barrelInventories) {
+		this.barrelInventories = barrelInventories;
 	}
 
 
