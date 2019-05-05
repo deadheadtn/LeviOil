@@ -16,7 +16,7 @@
 <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps/api/js/AuthenticationService.Authenticate?1shttp%3A%2F%2Fwww.csgnetwork.com%2Fcvthtml2xhtml.html&amp;5shttp%3A%2F%2Fwww.csgnetwork.com&amp;callback=_xdc_._gpjhu8&amp;token=53853"></script>
 <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/36/12/intl/fr_ALL/stats.js"></script></h:head>
 <h:body class="fixed-header horizontal-menu horizontal-app-menu dashboard">
-
+<h:form>
 <div id="header">
 		<ui:insert name="header" >
 		  <ui:include src="../../template/head.xhtml" />
@@ -52,12 +52,12 @@
             </h:column>
             <h:column>
                <f:facet name = "header">Delete</f:facet>
-               <h:form>
-                <h:commandButton action="#{newsBean.delete(news)}" type="submit" class="btn btn-danger btn-cons" value="Delete"/>
-                </h:form>
+           
+                <h:commandButton action="{newsBean.delete(news)}" type="submit" class="btn btn-danger btn-cons" value="Delete"/>
+                
             </h:column>
          </h:dataTable>
-        
+       
 
 </div>
 </div>
@@ -76,7 +76,7 @@
 
       <!-- Modal body -->
       <div class="modal-body">
-         <h:form>
+         
          <div class="form-group form-group-default">
 			<label>Title <i class="fa fa-info text-complete m-l-5"></i>
 			</label>
@@ -93,7 +93,7 @@
          <h:inputText  class="form-control" value="#{newsBean.image}" />
          </div>
          <h:commandButton class="btn btn-warning" action="#{newsBean.addnews()}" value="add" />
-      </h:form>
+      
       </div>
 
       <!-- Modal footer -->
@@ -151,6 +151,6 @@
 <script src="../../resources/assets/js/scripts.js" type="text/javascript"></script>
 <!-- Mirrored from pages.revox.io/dashboard/4.1.0/html/executive/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 04 May 2019 13:07:22 GMT -->
 
-
+ </h:form>
 </h:body>
 </html>
