@@ -13,12 +13,11 @@
 	
 <h1>Login</h1>
     <h:form method="post">
-    	<h:inputText value="#{loginBean.login}" name="u" placeholder="Username" required="true" />
-        <h:inputSecret   value="#{loginBean.password}" name="p" placeholder="Password" required="true" />
-        <h:commandButton id="btn" type="submit" action="#{loginBean.dologin()}" class="btn btn-primary btn-block btn-large" value="Let me in"/>
+    	<h:inputText value="#{loginBean.login}" name="u" placeholder="Username"  />
+        <h:inputSecret   value="#{loginBean.password}" name="p" placeholder="Password"  />
+        <h:commandButton id="btn" type="submit" action="#{loginBean.dologin()}" class="btn btn-primary btn-block btn-large"  value="Let me in">
+        </h:commandButton>
         <br></br>
-        <br></br>
-        <h:commandButton id="btn2" type="submit"  class="btn btn-primary btn-block btn-large" value="Be a Member"/>
-        
+        <h:commandButton id="btn2" type="submit"  class="btn btn-primary btn-block btn-large" value="Be a Member" action="sign2?faces-redirect=true"/>
         <h:message for="btn" />
     </h:form></div></body></html>

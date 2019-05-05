@@ -12,9 +12,11 @@
   
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   
-<title>Registration h:form</title>
+<title>Sign up</title>
   <link rel="stylesheet" href="./resources/css/styl.css" />
-  <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--></head>
+  <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+  </head>
 
 <body>
   
@@ -22,21 +24,18 @@
     <section class="register">
       
 <h1>Register</h1>
-      <h:form method="post" action="index.html">
+      <h:form method="post" action="index.html" enctype="multipart/form-data">
       
 <div class="reg_section personal_info">
       
 <h3>Your Personal Information</h3>
       <h:inputText id="u" type="text" name="username" value="#{inscriptionBean.username}" a:placeholder="Your Desired Username" />
-      <h:message for = "u" style = "color:red" /> 
       <h:inputText id ="f" type="text" name="FirstName" value="#{inscriptionBean.firstName}" a:placeholder="Your First Name" />
-      <h:message for = "f" style = "color:red" /> 
+      
         <h:inputText id="l" type="text" name="LastName" value="#{inscriptionBean.lastName}" a:placeholder="Your Last Name" />
-        <h:message for = "l" style = "color:red" /> 
+       
           <h:inputText id ="email" type="text" name="email" value="#{inscriptionBean.email}" a:placeholder="Your E-mail Address" />
-          <h:message for = "email" style = "color:red" /> 
             <h:inputText id="ph" type="text" name="Phone Number" value="#{inscriptionBean.phonenumber}" a:placeholder="Your Phone number" />
-            <h:message for = "ph" style = "color:red" /> 
         
       </div>
       
@@ -44,16 +43,15 @@
       
 <h3>Your Password and Security Question</h3>
       <h:inputText id="password" type="password" name="password" value="#{inscriptionBean.password}" a:placeholder="Your Password" />
-      <h:message for = "password" style = "color:red" /> 
       <h:inputText id="Rpassword" type="password" name="confirm" value="#{inscriptionBean.repPassword}" a:placeholder="Confirm Password" />
-      <h:message for = "Rpassword" style = "color:red" /> 
+
       <h:selectOneMenu value="Security Question">
     							  <f:selectItem itemLabel="Choose a Question" itemValue="" />
 								<f:selectItem itemValue = "#{inscriptionBean.securityQ}" itemLabel = "How are you ?" /> 
   								 <f:selectItem itemValue ="#{inscriptionBean.securityQ}" itemLabel = "How old are you ?" /> 
 							</h:selectOneMenu>
       <h:inputTextarea name="textarea" id="answer" value="#{inscriptionBean.answer}">Your Answer </h:inputTextarea>
-      <h:message for = "answer" style = "color:red" /> 
+      
 
       </div>
       
@@ -62,18 +60,18 @@
 <h3>Your Address</h3>
      
       <h:inputTextarea name="textarea" id="address" value="#{inscriptionBean.address}">Your Full Address</h:inputTextarea>
-     <h:message for = "address" style = "color:red" /> 
+       
       </div>
       
 
-        <h:form enctype="multipart/form-data">
-                <p:fileUpload  value="#{inscriptionBean.image}">
-                </p:fileUpload >                
+       
+       
+                 <h:inputFile  value="#{inscriptionBean.image}" mode="advanced" dragDropSupport="false"  sizeLimit="100000" fileLimit="3" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />
+                  
 
-           </h:form>
-           
+          
+       
     
-      
 <p class="submit"><h:commandButton type="submit" name="commit" value="Sign Up" action="#{inscriptionBean.DoInscription()}"/></p>
       </h:form>
     </section>
