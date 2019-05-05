@@ -1,12 +1,11 @@
 package services;
 
-
+import java.util.ArrayList;
 import java.util.List;
 
-import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
-
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
@@ -14,7 +13,6 @@ import entity.GasStation;
 import interfaces.GasStationIservice;
 
 @Stateless 
-@LocalBean
 public class GasStationService implements GasStationIservice {
 	@PersistenceContext(unitName = "LeviOil-ejb") 
 	EntityManager em; 
@@ -56,9 +54,9 @@ public class GasStationService implements GasStationIservice {
 
 	
 	public List<GasStation> findAllGasStations() {
-
+		System.out.println("+++++: ");
 		List<GasStation> list = em.createQuery("from GasStation", GasStation.class).getResultList(); 
-		System.out.println(list.toString());
+		System.out.println("11111111111111111111111111"+list.size()); 
 		return list; 
 
     }

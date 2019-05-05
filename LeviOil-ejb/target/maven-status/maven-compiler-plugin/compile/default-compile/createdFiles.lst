@@ -9,15 +9,12 @@ services\RessourceServiceImpl.class
 entity\Cv.class
 entity\MaterielWashing.class
 entity\Washing.class
-services\NewsService.class
 services\PartServiceImpl.class
 interfaces\FuelService.class
 services\WashingMaterielWashingService.class
 services\TruckServiceImpl.class
 entity\FuelTypeEnum.class
-interfaces\LogUserRemote.class
 entity\Type2.class
-entity\UserLog.class
 entity\OilWell.class
 entity\FuelOrder.class
 entity\TypeCarburant.class
@@ -27,15 +24,12 @@ interfaces\OilWellService.class
 entity\BarrelInventory.class
 interfaces\PumpMeterIservice.class
 entity\Pump.class
-interfaces\NewsRemote.class
 services\WashingService.class
 interfaces\ComplaintService.class
 entity\Complaint$Status.class
 entity\TruckLease.class
 entity\Part.class
-entity\news.class
 entity\Role$Values.class
-services\UserLogService.class
 entity\RessourceTypeEnum.class
 interfaces\TruckService.class
 entity\PumpMeterPump.class
@@ -56,7 +50,6 @@ interfaces\PumpIService.class
 services\ComplaintServiceImpl.class
 entity\User.class
 entity\Truck.class
-interfaces\CvRemote.class
 entity\BalanceSheet.class
 entity\TruckStateEnum.class
 services\MaterielWashingService.class
@@ -67,4 +60,3 @@ interfaces\WashingIservice.class
 services\PumpService.class
 entity\Role.class
 services\FuelServiceImpl.class
-services\CVService.class
