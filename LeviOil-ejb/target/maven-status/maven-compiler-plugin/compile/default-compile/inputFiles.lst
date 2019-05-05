@@ -1,5 +1,6 @@
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\entity\FuelTypeEnum.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\entity\Ressource.java
+C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\entity\FuelOrderStateEnum.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\entity\TruckStateEnum.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\entity\Washing.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\entity\RessourceTypeEnum.java
@@ -27,15 +28,18 @@ C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\interfaces\PumpMe
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\entity\FuelOrder.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\interfaces\GasStationIservice.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\entity\Fuel.java
+C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\services\FuelOrderServiceImpl.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\interfaces\WashingIservice.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\entity\TypeCarburant.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\entity\Type2.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\services\PumpService.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\entity\TruckLease.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\interfaces\ComplaintService.java
+C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\interfaces\TruckLeaseService.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\interfaces\OilWellService.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\interfaces\UserRemote.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\entity\OilWellStateEnum.java
+C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\services\TruckLeaseServiceImpl.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\services\TruckServiceImpl.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\entity\Truck.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\interfaces\PartService.java
@@ -46,11 +50,13 @@ C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\entity\UserLog.ja
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\services\RessourceServiceImpl.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\interfaces\TruckService.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\services\WashingService.java
+C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\interfaces\IGenericService.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\interfaces\WashingmaterielwashingIservice.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\entity\WashingMaterielWashing.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\interfaces\FuelService.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\entity\Type_Service.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\entity\PumpMeterPump.java
+C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\interfaces\FuelOrderService.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\entity\news.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\services\CVService.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\services\PumpMeterService.java
@@ -64,3 +70,4 @@ C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\services\NewsServ
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\services\FuelServiceImpl.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\entity\Type.java
 C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\services\PartServiceImpl.java
+C:\Users\Pc\Documents\GitHub\LeviOil\LeviOil-ejb\src\main\java\services\GenericServiceImpl.java

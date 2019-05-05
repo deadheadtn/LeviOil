@@ -88,7 +88,7 @@ public class FuelOrderBean implements Serializable {
 		fuelOrder.setTotalCost(fuelOrder.getFuelCost()+fuelOrder.getTranportationCost());
 	
 		fuelOrderService.add(fuelOrder);
-		navigate="listFuelOrder";
+		navigate="/pages/client/listFuelOrder";
 		}
 		return navigate;
 		
@@ -103,7 +103,7 @@ public class FuelOrderBean implements Serializable {
 		this.setFuel(fuelOrder.getFuel());
 		this.setQuantity(fuelOrder.getQuantity());
 
-		return "addFuelOrder?faces-redirect=true";
+		return "/pages/client/addFuelOrder?faces-redirect=true";
 	}
 	
 	public String updateFuelOrder()
@@ -120,7 +120,7 @@ public class FuelOrderBean implements Serializable {
 	
 		fuelOrderService.updateFuelOrder(fuelOrder);
 		
-		return "listFuelOrder?faces-redirect=true";
+		return "/pages/client/listFuelOrder?faces-redirect=true";
 	}
 
 	
