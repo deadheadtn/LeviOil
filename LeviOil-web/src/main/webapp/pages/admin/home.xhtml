@@ -48,11 +48,13 @@
             </h:column>
 			<h:column>
                <f:facet name = "header">Modify</f:facet>
-               <h:commandButton class="btn btn-success btn-cons" value="Modify"/>
+               <h:commandButton action="#{newsBean.modif(news.id)}" class="btn btn-success btn-cons" value="Modify"/>
             </h:column>
             <h:column>
                <f:facet name = "header">Delete</f:facet>
-                <h:commandButton class="btn btn-danger btn-cons" value="Delete"/>
+               <h:form>
+                <h:commandButton action="#{newsBean.delete(news.id)}" class="btn btn-danger btn-cons" value="Delete"/>
+                </h:form>
             </h:column>
          </h:dataTable>
         
@@ -68,7 +70,7 @@
 
       <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">Modal Heading</h4>
+        <h4 class="modal-title">Add a Post</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
 
@@ -90,7 +92,7 @@
 			</label>
          <h:inputText  class="form-control" value="#{newsBean.image}" />
          </div>
-         <h:commandButton action="#{newsBean.addnews()}" value="add" />
+         <h:commandButton class="btn btn-warning" action="#{newsBean.addnews()}" value="add" />
       </h:form>
       </div>
 

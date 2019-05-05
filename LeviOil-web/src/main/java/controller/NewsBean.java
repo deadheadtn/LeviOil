@@ -36,7 +36,10 @@ public class NewsBean {
 		newsService.addNews(n);
 		return 0;
 	}
-
+	public void delete(Integer id) {
+		news n=new news(id,"aa","aa","aa");
+		newsService.delete(n);
+	}
 	public int getId() {
 		return this.id;
 	}

@@ -61,5 +61,10 @@ public class news implements Serializable {
 		this.text=text;
 		this.image=image;
 	}
-
+	public news(int id,String title,String image,String text){
+		this.id=id;
+		this.title=title;
+		this.text=text;
+		this.image=image;
+	}
 }
