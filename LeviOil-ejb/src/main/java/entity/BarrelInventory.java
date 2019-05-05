@@ -1,25 +1,23 @@
 package entity;
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  *
  */
-
 @Entity
+@Table(name="barrel_inventory")
 public class BarrelInventory implements Serializable {
 
     /**
      * Default constructor
      */
-	
-	private int test;
     public BarrelInventory() {
     }
 
@@ -29,8 +27,7 @@ public class BarrelInventory implements Serializable {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
-    
-    
+
     /**
      *
      */
@@ -44,8 +41,8 @@ public class BarrelInventory implements Serializable {
     /**
      *
      */
-    @OneToMany(mappedBy="barrelInventory")
-    private List<Fuel> Fuel;
+    @ManyToOne
+    private Fuel fuel;
     
     public Integer getId() {
         return id;
@@ -72,15 +69,13 @@ public class BarrelInventory implements Serializable {
     }
     
     
-    public List<Fuel> getFuel() {
-        return Fuel;
+    public Fuel getFuel() {
+        return fuel;
     }
 
-    public void setFuel(List<Fuel> Fuel) {
-        this.Fuel = Fuel;
+    public void setFuel(Fuel fuel) {
+        this.fuel = fuel;
     }
-
-
 
     
 

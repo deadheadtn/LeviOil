@@ -1,11 +1,9 @@
 package services;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
@@ -14,8 +12,9 @@ import interfaces.GasStationIservice;
 
 @Stateless 
 public class GasStationService implements GasStationIservice {
-	@PersistenceContext(unitName = "LeviOil-ejb") 
+	@PersistenceContext(unitName = "LeviOil-ejb")
 	EntityManager em; 
+	
 	@Override
 	public int addGasStation(GasStation gasStation) {
 		em.persist(gasStation);
@@ -30,6 +29,20 @@ public class GasStationService implements GasStationIservice {
 		
 	}
 
+	@Override
+	public GasStation getGasStationByUser(int id) {
+		GasStation gasStation=null;
+		try {
+		 gasStation= em.createQuery("select g from GasStation g WHERE g.manager.id=:id ",GasStation.class)
+			.setParameter("id", id)
+			.getResultList().get(0);
+		}
+		catch (Exception e) {
+			System.out.println("Erreur "+e);
+		}
+		return gasStation;
+	}
+	
 	@Override
 	public void updateGasStation(GasStation gasGasStation) {
 		System.out.println("In updateUser : "); 
@@ -60,6 +73,7 @@ public class GasStationService implements GasStationIservice {
 		return list; 
 
     }
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<GasStation> findGasStationbynameuser(String Name) {
 		Query query= em.createQuery("select p from GasStation p where  p.User.firstName=:Name",GasStation.class);
