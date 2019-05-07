@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<!-- Mirrored from pages.revox.io/dashboard/4.1.0/html/executive/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 04 May 2019 13:06:32 GMT -->
+<h:head>
+
+	<title>Pages - Admin Dashboard UI Kit - Dashboard</title>
+</h:head>
+<h:body>
+
+<h:form>
+					<h:dataTable
+						class="table table-hover demo-table-search table-responsive-block dataTable no-footer"
+												value="#{newsBean.newsonly()}" var="news">
+						<h:column>
+							<f:facet name="header">title</f:facet>
+							<h:outputText value="#{news.title}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">text</f:facet>
+							<h:outputText value="#{news.text}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">image</f:facet>
+							<img width="150px" src="#{news.image}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Commentaire</f:facet>
+							<h:inputText class="form-control" value = "#{commentsBean.content}"    />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Comments</f:facet>
+							<h:commandButton action="#{commentsBean.addcomment(news,loginBean.user)}" type="submit"
+								class="btn btn-default w-100" value="Comments" />
+						</h:column>
+
+					</h:dataTable>
+				</h:form>
+			<h:form>
+					<h:dataTable
+						class="table table-hover demo-table-search table-responsive-block dataTable no-footer"
+						value="#{commentsBean.getallcomments()}" var="comments">
+						<h:column>
+							<f:facet name="header">Email</f:facet>
+							<h:outputText value="#{comments.commented_user.email}" rendered="#{comments.post.id==newsBean.news.id and !comments.removed}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Date</f:facet>
+							<h:outputText value="#{comments.createdAt}" rendered="#{comments.post.id==newsBean.news.id and !comments.removed}" />
+						</h:column>
+						<h:column>	
+							<f:facet name="header">Comment</f:facet>
+							<h:outputText value="#{comments.content}" rendered="#{comments.post.id==newsBean.news.id and !comments.removed}" />
+						</h:column>
+		
+					</h:dataTable>
+				</h:form>
+</h:body>
+</html>

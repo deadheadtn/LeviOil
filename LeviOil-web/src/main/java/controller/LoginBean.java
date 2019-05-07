@@ -55,6 +55,7 @@ public class LoginBean {
 		user = userservice.getMembreByUsernamePassword(login, password);
 		if(user.getState()==1) {
 			if (checkpass(password)==true) {
+				
 				if (user.getRole() == Role.Admin ) {
 					
 					navigateTo = "/pages/admin/index?faces-redirect=true";
@@ -139,7 +140,7 @@ public class LoginBean {
 		else {
 			
 		}*/
-	
+		this.setUser(user);
 		
 	return navigateTo;
 		

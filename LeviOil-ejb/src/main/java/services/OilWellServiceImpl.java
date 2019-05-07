@@ -12,7 +12,6 @@ import entity.OilWellStateEnum;
 import entity.Ressource;
 import entity.RessourceTypeEnum;
 import interfaces.OilWellService;
-import javafx.scene.control.Alert;
 
 @Stateless
 public class OilWellServiceImpl implements OilWellService {

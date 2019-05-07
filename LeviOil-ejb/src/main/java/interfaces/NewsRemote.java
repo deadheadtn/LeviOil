@@ -15,4 +15,6 @@ public interface NewsRemote {
 	int modifynews(news News);
 	public int delete(news News);
 	List<news> search(String searchable);
+	public void edit(news n);
+	public news getone (int id);
 }

@@ -22,6 +22,9 @@ public class news implements Serializable {
 	private String text;
 
 	private String title;
+	private boolean editable;
+	
+
 	public news() {
 	}
 
@@ -55,6 +58,12 @@ public class news implements Serializable {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	public boolean isEditable() {
+		return editable;
+	}
+	public void setEditable(boolean editable) {
+		this.editable = editable;
 	}
 	public news(String title,String image,String text){
 		this.title=title;
