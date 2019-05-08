@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:head>
+	<title>Buy Gift With Tickets</title>
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+
+	<style type="text/css">
+.btnWidth {
+	width: 80px;
+}
+
+.serialNumberLabelColumn {
+	margin: auto;
+	width: 25%;
+	border: 3px solid green;
+	padding: 10px;
+}
+
+.serialNumberInputColumn {
+	margin: auto;
+	width: 25%;
+	border: 3px solid green;
+	padding: 10px;
+}
+
+.serialNumberButtonColumn {
+	margin: auto;
+	width: 25%;
+	border: 3px solid green;
+	padding: 10px;
+}
+
+.table {
+	margin-left: auto;
+	margin-right: auto;
+}
+</style>
+</h:head>
+
+<h:body>
+	<h4>
+		<h:outputText value="Fidelity Points : " style="color:#140F97;" />
+
+		<h:outputText
+			value="#{giftController.getConnectedUserFidelityPoints()}"
+			style="color:#208424;" />
+	</h4>
+	<h:form id="form" class="form-horizontal" style="text-align:center;">
+		<div class="form-group">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<h2>Buy Gift With Tickets</h2>
+			</div>
+		</div>
+		<hr />
+
+		<div class="form-group">
+			<h:outputLabel for="name" class="control-label col-sm-4">Name *</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="name" value="#{customerGiftController.name}"
+					class="form-control" readonly="true"
+					style="background-color:yellow;">
+				</h:inputText>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<h:outputLabel for="description" class="control-label col-sm-4">Description *</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="description"
+					value="#{customerGiftController.description}" class="form-control"
+					readonly="true" style="background-color:yellow;">
+				</h:inputText>
+				<h:message id="descriptionMessage" for="description"
+					style="color:red" />
+			</div>
+		</div>
+
+		<div class="form-group">
+			<h:outputLabel for="pointsRequired" class="control-label col-sm-4">Points Required Per Gift*</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="pointsRequired"
+					value="#{customerGiftController.pointsRequired}"
+					class="form-control" readonly="true"
+					style="background-color:yellow;">
+				</h:inputText>
+				<h:message id="pointsRequiredMessage" for="pointsRequired"
+					style="color:red" />
+			</div>
+		</div>
+
+		<!--   Tfaker juste t7ot taswira hné -->
+
+		<div class="form-group">
+			<h:outputLabel for="quantity" class="control-label col-sm-4">Quantity *</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="quantity"
+					value="#{customerGiftController.quantity}" class="form-control">
+					<f:ajax event="blur" render="quantityMessage" />
+				</h:inputText>
+				<h:message id="quantityMessage" for="quantity" style="color:red" />
+			</div>
+		</div>
+
+		<div class="form-group">
+			<h:dataTable id="table" value="#{customerGiftController.tickets}"
+				var="ticket" class="table table-striped table-hover table-bordered"
+				columnClasses="serialNumberLabelColumn,serialNumberInputColumn,serialNumberButtonColumn">
+
+
+				<h:column>
+					<h:outputLabel class="control-label col-sm-4">Serial Number *</h:outputLabel>
+				</h:column>
+
+				<h:column>
+					<h:inputText id="serialNumberInput" value="#{ticket.serialNumber}"
+						validator="#{customerGiftController.validateSerialNumber}"
+						class="form-control">
+						<f:ajax event="blur" render="serialNumberMessage" />
+
+					</h:inputText>
+
+					<h:message id="serialNumberMessage" for="serialNumberInput"
+						style="color:red" />
+				</h:column>
+				<h:column>
+					<h:commandButton value="Remove"
+						action="#{customerGiftController.remove(ticket)}"
+						class="btn btn-danger" />
+				</h:column>
+			</h:dataTable>
+			<h:commandButton value="Add Ticket"
+				action="#{customerGiftController.add}" class="btn btn-success" />
+
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<div class="form-group">
+			<div class="col-sm-5"></div>
+			<div class="col-sm-4">
+				<div class="col-sm-2">
+					<h:commandButton id="buyButton" value="Buy"
+						action="#{customerGiftController.buyWithTickets()}"
+						class="btn btn-success btnWidth">
+						<f:ajax execute="@all" render="@form" />
+					</h:commandButton>
+				</div>
+				<div class="col-sm-1"></div>
+				<div class="col-sm-2">
+					<h:link outcome="index" value="View Gifts List"
+						class="btn btn-primary" />
+				</div>
+			</div>
+		</div>
+	</h:form>
+</h:body>
+</html>

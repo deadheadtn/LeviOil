@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Gifts Statistics</title>
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<style type="text/css">
+.btnWidth {
+	width: 80px;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td {
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2
+}
+
+th {
+	background-color: #4CAF50;
+	color: white;
+}
+
+.giftsThisYearColumn {
+	margin: auto;
+	width: 15%;
+	border: 3px solid green;
+	padding: 10px;
+}
+
+.giftsThisMonthColumn {
+	margin: auto;
+	width: 35%;
+	border: 3px solid green;
+	padding: 10px;
+}
+
+.giftsThisDayColumn {
+	margin: auto;
+	width: 10%;
+	border: 3px solid green;
+	padding: 10px;
+}
+</style>
+</h:head>
+<h:body>
+
+	<center>
+		<h2>
+			<h:outputText value="Gifts Statistics" />
+		</h2>
+	</center>
+	<h3>
+		<h:outputText value="Gifts Bought this year : " style="color:#140F97;" />
+
+		<h:outputText value="#{giftController.boughtGiftsThisYear}"
+			style="color:#208424;" />
+	</h3>
+
+	<h3>
+		<h:outputText value="Gifts Bought this Month : "
+			style="color:#140F97;" />
+
+		<h:outputText value="#{giftController.boughtGiftsThisMonth}"
+			style="color:#208424;" />
+	</h3>
+
+	<h3>
+		<h:outputText value="Gifts Bought this Day : " style="color:#140F97;" />
+
+		<h:outputText value="#{giftController.boughtGiftsThisDay}"
+			style="color:#208424;" />
+	</h3>
+
+
+</h:body>
+</html>

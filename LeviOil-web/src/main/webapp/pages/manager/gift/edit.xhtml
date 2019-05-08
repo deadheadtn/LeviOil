@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:head>
+	<title>Edit Gift</title>
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+
+	<style type="text/css">
+.btnWidth {
+	width: 80px;
+}
+</style>
+</h:head>
+
+<h:body>
+	<h:form id="form" enctype="multipart/form-data" class="form-horizontal"
+		style="text-align:center;">
+		<div class="form-group">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<h2>Edit Gift</h2>
+			</div>
+		</div>
+		<hr />
+
+		<div class="form-group">
+			<h:outputLabel for="name" class="control-label col-sm-4">Name *</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="name" value="#{giftController.name}"
+					class="form-control" readonly="true"
+					style="background-color:yellow;">
+				</h:inputText>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<h:outputLabel for="description" class="control-label col-sm-4">Description *</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="description" value="#{giftController.description}"
+					class="form-control">
+					<f:ajax event="blur" render="descriptionMessage" />
+				</h:inputText>
+				<h:message id="descriptionMessage" for="description"
+					style="color:red" />
+			</div>
+		</div>
+
+		<div class="form-group">
+			<h:outputLabel for="quantity" class="control-label col-sm-4">Quantity *</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="quantity" value="#{giftController.quantity}"
+					class="form-control">
+					<f:ajax event="blur" render="quantityMessage" />
+				</h:inputText>
+				<h:message id="quantityMessage" for="quantity" style="color:red" />
+			</div>
+		</div>
+
+		<div class="form-group">
+			<h:outputLabel for="pointsRequired" class="control-label col-sm-4">Points Required *</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="pointsRequired"
+					value="#{giftController.pointsRequired}" class="form-control">
+					<f:ajax event="blur" render="pointsRequiredMessage" />
+				</h:inputText>
+				<h:message id="pointsRequiredMessage" for="pointsRequired"
+					style="color:red" />
+			</div>
+		</div>
+		<!--  
+		<div class="form-group">
+			<h:outputLabel for="picture" class="control-label col-sm-4">Picture *</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputFile id="picture" value="#{giftController.imageFile}"
+					validator="#{giftController.validateImage}">
+					<f:ajax listener="#{giftController.uploadImage()}" />
+					<f:ajax event="blur" render="pictureMessage" />
+				</h:inputFile>
+				<h:message id="pictureMessage" for="picture" style="color:red" />
+			</div>
+		</div>
+-->
+
+		<div class="form-group">
+			<div class="col-sm-5"></div>
+			<div class="col-sm-4">
+				<div class="col-sm-2">
+					<h:commandButton id="updateButton" value="Update"
+						action="#{giftController.update()}"
+						class="btn btn-success btnWidth">
+						<f:ajax execute="name description quantity pointsRequired"
+							render="nameMessage descriptionMessage quantityMessage pointsRequiredMessage" />
+					</h:commandButton>
+				</div>
+				<div class="col-sm-1"></div>
+				<div class="col-sm-2">
+					<h:link outcome="index" value="View Gift Records"
+						class="btn btn-primary" />
+				</div>
+			</div>
+		</div>
+	</h:form>
+</h:body>
+</html>

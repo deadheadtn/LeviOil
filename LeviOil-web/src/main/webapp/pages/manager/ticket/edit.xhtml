@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:head>
+	<title>Edit Ticket</title>
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+
+	<style type="text/css">
+.btnWidth {
+	width: 80px;
+}
+</style>
+</h:head>
+
+<h:body>
+	<h:form id="form" class="form-horizontal" style="text-align:center;">
+		<div class="form-group">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<h2>Edit Ticket</h2>
+			</div>
+		</div>
+		<hr />
+
+		<div class="form-group">
+			<h:outputLabel for="serialNumber" class="control-label col-sm-4">Serial Number *</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="serialNumber"
+					value="#{ticketController.serialNumber}" class="form-control"
+					readonly="true" style="background-color:yellow;">
+				</h:inputText>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<h:outputLabel for="cashAmount" class="control-label col-sm-4">Cash Amount *</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="cashAmount" value="#{ticketController.cashAmount}"
+					class="form-control">
+					<f:ajax event="blur" render="cashAmountMessage" />
+				</h:inputText>
+				<h:message id="cashAmountMessage" for="cashAmount" style="color:red" />
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<h:outputLabel for="expiryDate" class="control-label col-sm-4">Expiry Date *</h:outputLabel>
+			<div class="col-sm-4">
+				<h:inputText id="expiryDate" value="#{ticketController.expiryDate}"
+					converterMessage="Format must be: dd/MM/yyyy" class="form-control">
+					<f:passThroughAttribute name="type" value="date" />
+					<f:convertDateTime type="date" pattern="yyyy-MM-dd" />
+					<f:ajax event="blur" render="expiryDateMessage" />
+				</h:inputText>
+				<h:message id="expiryDateMessage" for="expiryDate" style="color:red" />
+			</div>
+		</div>
+
+
+		<div class="form-group">
+			<div class="col-sm-5"></div>
+			<div class="col-sm-4">
+				<div class="col-sm-2">
+					<h:commandButton id="updateButton" value="Update"
+						action="#{ticketController.update()}"
+						class="btn btn-success btnWidth">
+						<f:ajax execute="@form" render="@form" />
+					</h:commandButton>
+				</div>
+				<div class="col-sm-1"></div>
+				<div class="col-sm-2">
+					<h:link outcome="index" value="View Tickets List"
+						class="btn btn-primary" />
+				</div>
+			</div>
+		</div>
+	</h:form>
+</h:body>
+</html>

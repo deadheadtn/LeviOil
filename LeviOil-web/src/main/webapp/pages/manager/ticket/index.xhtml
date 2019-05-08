@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Ticket Records</title>
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<style type="text/css">
+.btnWidth {
+	width: 80px;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td {
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2
+}
+
+th {
+	background-color: #4CAF50;
+	color: white;
+}
+</style>
+</h:head>
+<h:body>
+	<h:form>
+		<center>
+			<h2>
+				<h:outputText value="Ticket Records" />
+			</h2>
+		</center>
+		<h:dataTable binding="#{table}" value="#{ticketController.findAll()}"
+			var="ticket" class="table table-striped table-hover table-bordered">
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Serial Number" />
+				</f:facet>
+				<h:outputText value="#{ticket.serialNumber}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Cash Amount" />
+				</f:facet>
+				<h:outputText value="#{ticket.cashAmount}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="State" />
+				</f:facet>
+				<h:outputText value="#{ticket.state}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Expiry Date" />
+				</f:facet>
+				<h:outputText value="#{ticket.expiryDate}">
+						<f:convertDateTime type="date" pattern="dd/MM/yyyy" />
+				</h:outputText>
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Edit</f:facet>
+
+				<h:commandLink action="#{ticketController.edit(ticket)}"
+					value="Edit" class="btn btn-primary" style="width: 80px;">
+				</h:commandLink>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Delete</f:facet>
+				<h:commandButton action="#{ticketController.delete(ticket.id)}"
+					value="Delete" class="btn btn-danger" style="width: 80px;">
+				</h:commandButton>
+			</h:column>
+
+		</h:dataTable>
+
+		<center>
+			<h:button value="Add Ticket" outcome="add.jsf"
+				class="btn btn-success" style="width: 120px;"></h:button>
+		</center>
+	</h:form>
+
+</h:body>
+</html>
