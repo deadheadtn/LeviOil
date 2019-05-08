@@ -1,44 +1,985 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
-<!-- Mirrored from pages.revox.io/dashboard/4.1.0/html/executive/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 04 May 2019 13:06:32 GMT -->
-<h:head>
+<meta class="foundation-mq-small" />
+<meta class="foundation-mq-small-only" />
+<meta class="foundation-mq-medium" />
+<meta class="foundation-mq-medium-only" />
+<meta class="foundation-mq-large" />
+<meta class="foundation-mq-large-only" />
+<meta class="foundation-mq-xlarge" />
+<meta class="foundation-mq-xlarge-only" />
+<meta class="foundation-mq-xxlarge" />
+<meta class="foundation-data-attribute-namespace" />
+<script
+	src="http://themes.webdevia.com/petroleum-gas/wp-includes/js/wp-emoji-release.min.js?ver=5.1.1"
+	type="text/javascript" defer=""></script>
+<style></style>
+<meta class="foundation-mq-topbar" />
+<style type="text/css">
+.esgbox-margin {
+	margin-right: 0px;
+}
+</style>
+<body
+	class="page-template-default page page-id-713 wpb-js-composer js-comp-ver-5.7 vc_responsive">
 
-	<title>Pages - Admin Dashboard UI Kit - Dashboard</title>
-</h:head>
-<h:body>
+	<meta charset="utf-8" />
 
-<h:form>
-					<h:dataTable
-						class="table table-hover demo-table-search table-responsive-block dataTable no-footer"
-						value="#{newsBean.findall()}" var="news">
-						<h:column>
-							<f:facet name="header">title</f:facet>
-							<h:outputText value="#{news.title}"  />
-						</h:column>
-						<h:column>
-							<f:facet name="header">text</f:facet>
-							<h:outputText value="#{news.text}"  />
-						</h:column>
-						<h:column>
-							<f:facet name="header">image</f:facet>
-							<img width="150px" src="#{news.image}" />
-						</h:column>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="shortcut icon"
+		href="http://themes.webdevia.com/solar-wp/wp-content/themes/solar/images/favicon.png" />
 
-						<h:column>
-							<f:facet name="header">Comments</f:facet>
-							
-							<h:commandButton action="#{newsBean.gotonewssingle(news)}" type="submit"
-								class="btn btn-default w-100" value="Comments" >
-								</h:commandButton>
-						</h:column>
 
-					</h:dataTable>
-				</h:form>
 
-</h:body>
+	<link id="wd_header_google_fonts-css" media="all" type="text/css"
+		href="http://fonts.googleapis.com/css?family=Roboto+Slab"
+		rel="stylesheet" />
+	<link
+		href="https://fonts.googleapis.com/css?family=Arimo:400,400italic,700,700italic"
+		rel="stylesheet" type="text/css" />
+	<link id="tp-open-sans-css" media="all" type="text/css"
+		href="http://fonts.googleapis.com/css?family=Open+Sans%3A300%2C400%2C600%2C700%2C800&amp;ver=4.3.1"
+		rel="stylesheet" />
+
+
+
+
+
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+	<style>
+.edgeLoad-EDGE-119381469 {
+	visibility: hidden;
+}
+</style>
+
+
+	<title>Blog Columns – Petroleum and Gas</title>
+	<link rel="dns-prefetch" href="//maps.googleapis.com" />
+	<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+	<link rel="dns-prefetch" href="//s.w.org" />
+	<link rel="alternate" type="application/rss+xml"
+		title="Petroleum and Gas » Feed"
+		href="http://themes.webdevia.com/petroleum-gas/?feed=rss2" />
+	<link rel="alternate" type="application/rss+xml"
+		title="Petroleum and Gas » Comments Feed"
+		href="http://themes.webdevia.com/petroleum-gas/?feed=comments-rss2" />
+
+	<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/themes.webdevia.com\/petroleum-gas\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.1.1"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&amp;&amp;(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&amp;&amp;k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i&lt;j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&amp;&amp;c.supports[j[i]],"flag"!==j[i]&amp;&amp;(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&amp;&amp;c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&amp;&amp;!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&amp;&amp;c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&amp;&amp;g.twemoji&amp;&amp;(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+	<style type="text/css">
+img.wp-smiley, img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css"
+		href="http://themes.webdevia.com/petroleum-gas/wp-includes/css/dist/block-library/style.min.css?ver=5.1.1"
+		type="text/css" media="all" />
+	<link rel="stylesheet" id="contact-form-7-css"
+		href="http://themes.webdevia.com/petroleum-gas/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.1.1"
+		type="text/css" media="all" />
+	<link rel="stylesheet" id="essential-grid-plugin-settings-css"
+		href="http://themes.webdevia.com/petroleum-gas/wp-content/plugins/essential-grid/public/assets/css/settings.css?ver=2.0.9"
+		type="text/css" media="all" />
+	<link rel="stylesheet" id="tp-open-sans-css"
+		href="http://fonts.googleapis.com/css?family=Open+Sans%3A300%2C400%2C600%2C700%2C800&amp;ver=5.1.1"
+		type="text/css" media="all" />
+	<link rel="stylesheet" id="tp-raleway-css"
+		href="http://fonts.googleapis.com/css?family=Raleway%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900&amp;ver=5.1.1"
+		type="text/css" media="all" />
+	<link rel="stylesheet" id="tp-droid-serif-css"
+		href="http://fonts.googleapis.com/css?family=Droid+Serif%3A400%2C700&amp;ver=5.1.1"
+		type="text/css" media="all" />
+	<link rel="stylesheet" id="rs-plugin-settings-css"
+		href="http://themes.webdevia.com/petroleum-gas/wp-content/plugins/revslider/public/assets/css/settings.css?ver=5.4.8.2"
+		type="text/css" media="all" />
+	<style id="rs-plugin-settings-inline-css" type="text/css">
+.tp-caption a {
+	color: #ff7302;
+	text-shadow: none;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	-ms-transition: all 0.2s ease-out
+}
+
+.tp-caption a:hover {
+	color: #ffa902
+}
+</style>
+	<link rel="stylesheet" id="wd-fonts-body-css"
+		href="//fonts.googleapis.com/css?family=Open+Sans%3A%26subset%3Dlatin&amp;ver=1.0.0"
+		type="text/css" media="all" />
+	<link rel="stylesheet" id="wd-fonts-header-css"
+		href="//fonts.googleapis.com/css?family=Montserrat%3A%26subset%3Dlatin&amp;ver=1.0.0"
+		type="text/css" media="all" />
+	<link rel="stylesheet" id="wd-fonts-navigation-css"
+		href="//fonts.googleapis.com/css?family=Montserrat%3A%26subset%3Dlatin&amp;ver=1.0.0"
+		type="text/css" media="all" />
+	<link rel="stylesheet" id="Owl-carousel-css"
+		href="http://themes.webdevia.com/petroleum-gas/wp-content/themes/petroleum/stylesheets/owl.carousel.css?ver=5.1.1"
+		type="text/css" media="all" />
+	<link rel="stylesheet" id="Owl-carousel-theme-css"
+		href="http://themes.webdevia.com/petroleum-gas/wp-content/themes/petroleum/stylesheets/owl.theme.css?ver=5.1.1"
+		type="text/css" media="all" />
+	<link rel="stylesheet" id="Owl-carousel-animation-css"
+		href="http://themes.webdevia.com/petroleum-gas/wp-content/themes/petroleum/stylesheets/animate.css?ver=5.1.1"
+		type="text/css" media="all" />
+	<link rel="stylesheet" id="swiper-css"
+		href="http://themes.webdevia.com/petroleum-gas/wp-content/themes/petroleum/stylesheets/swiper.min.css?ver=5.1.1"
+		type="text/css" media="all" />
+	<link rel="stylesheet" id="font-awesome-css"
+		href="http://themes.webdevia.com/petroleum-gas/wp-content/plugins/js_composer/assets/lib/bower/font-awesome/css/font-awesome.min.css?ver=5.7"
+		type="text/css" media="all" />
+	<link rel="stylesheet" id="petroleum_style-css"
+		href="http://themes.webdevia.com/petroleum-gas/wp-content/themes/petroleum/stylesheets/app.css?ver=5.1.1"
+		type="text/css" media="all" />
+	<link rel="stylesheet" id="woocommerce-css"
+		href="http://themes.webdevia.com/petroleum-gas/wp-content/themes/petroleum/stylesheets/woocommerce.css?ver=5.1.1"
+		type="text/css" media="all" />
+	<link rel="stylesheet" id="custom-style-css"
+		href="http://themes.webdevia.com/petroleum-gas/wp-content/themes/petroleum/style.css?ver=5.1.1"
+		type="text/css" media="all" />
+	<style id="custom-style-inline-css" type="text/css">
+.single-post .wd-title-bar {
+	background:
+		url(http://themes.webdevia.com/petroleum-gas/wp-content/uploads/2018/08/titlebar-bg.jpg)
+		no-repeat #6DD676;
+	background-size: cover;
+}
+
+body, body p {
+	font-family: 'Open Sans';
+	font-weight:;
+}
+
+h1, h2, h3, h4, h5, h6, .menu-list a {
+	font-family: 'Montserrat';
+	font-weight: 700;
+}
+
+.top-bar-section ul li a {
+	font-family: 'Montserrat';
+}
+
+.top-bar-section ul li>a {
+	font-weight: 400;
+}
+
+.top-bar-section ul li>a {
+	text-transform: uppercase;
+}
+
+h1, h2, h3, h4, h5, h6, .menu-list a {
+	text-transform: none;
+}
+
+body, body p {
+	text-transform: none;
+}
+
+.primary-color, #filters li:hover, #filters li:first-child, #filters li:focus,
+	#filters li:active, .wd-section-blog-services.style-3 .wd-blog-post h4:after,
+	.box-icon img, .box-icon i, button:hover, button:focus, .button:hover,
+	.button:focus, button, .button, .wd-latest-news .wd-image-date span strong,
+	.wd-section-blog.style2 h4:after, .pricing-table.featured .title,
+	.accordion .accordion-navigation>a, .accordion dd>a, .searchform #searchsubmit,
+	.wd-pagination span, .blog-page .quote-format blockquote, .woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+	.woocommerce-page .widget_price_filter .ui-slider .ui-slider-range,
+	.products .product .button, .woocommerce #content input.button.alt,
+	.woocommerce #respond input#submit.alt, .woocommerce a.button.alt,
+	.woocommerce button.button.alt, .woocommerce input.button.alt,
+	.woocommerce-page #content input.button.alt, .woocommerce-page #respond input#submit.alt,
+	.woocommerce-page a.button.alt, .woocommerce-page button.button.alt,
+	.woocommerce-page input.button.alt, .woocommerce #content input.button:hover,
+	.woocommerce #respond input#submit:hover, .woocommerce a.button:hover,
+	.woocommerce button.button:hover, .woocommerce input.button:hover,
+	.woocommerce-page #content input.button:hover, .woocommerce-page #respond input#submit:hover,
+	.woocommerce-page a.button:hover, .woocommerce-page button.button:hover,
+	.woocommerce-page input.button:hover, .woocommerce span.onsale,
+	.woocommerce-page span.onsale, .woocommerce-page button.button,
+	.widget_product_search #searchsubmit, .widget_product_search #searchsubmit:hover,
+	.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button,
+	.woocommerce input.button, *
+					.custom-pagination a:hover, .custom-pagination span.current,
+	.wd-title-section_l h2::after, .wd-title-section_c h2::after,
+	.hvr-underline-from-center::before, .wd-latest-news .wd-title-element::after
+	{
+	background: rgba(255, 210, 0, 1);
+}
+
+.wd-section-blog-services.style-3 .wd-blog-post .shape {
+	stroke: rgba(255, 210, 0, 1)
+}
+
+.blog-page .read-more-link, #wp-calendar a, .wd-testimonail blockquote cite,
+	.list-icon li:before, a:hover, a:focus, a {
+	color: rgba(255, 210, 0, 1);
+}
+
+.hvr-underline-from-center:before, .hvr-outline-in:before {
+	border-color: rgba(72, 73, 57, 1);
+}
+
+.positioned .top-bar-header {
+	background-color: rgba(32, 152, 209, 1);
+}
+
+.positioned .top-bar-header .list-info-container li, .positioned .top-bar-header .list-info-container i
+	{
+	color: rgba(32, 152, 209, 1);
+}
+
+.positioned .top-bar-container {
+	background-color: rgba(32, 152, 209, 1);
+}
+
+.header-creative-layout.positioned .contain-to-grid .top-bar .top-bar-section .menu>li>a
+	{
+	color: rgba(32, 152, 209, 1);
+}
+
+.header-creative-layout.positioned .contain-to-grid .top-bar .top-bar-section  ul li.has-dropdown>a::after
+	{
+	border-color: rgba(32, 152, 209, 1) transparent transparent transparent;
+}
+
+.page-id-4 .wd-title-bar, .page-id-883 .wd-title-bar, .page-id-821 .wd-title-bar
+	{
+	display: none;
+}
+
+.wd-benefits .box-description h3, .wd-benefits .box-description p,
+	.wd-text-icon-rtl .box-description h3, .wd-text-icon-rtl .box-description p
+	{
+	color: #fff;
+	text-transform: none;
+}
+
+.wd-footer, .wd-copyright {
+	background: rgb(44, 44, 44)
+		url(http://themes.webdevia.com/petroleum-gas/wp-content/uploads/2016/06/bg4-3.jpg)
+		no-repeat;
+	background-size: cover;
+	background-position: bottom;
+}
+
+.wd-section-contact .wd-form .form-content, .wd-section-contact .wd-form
+	{
+	background: #6AA70A;
+}
+
+.page-id-1061 .wd-menu3-header, .page-id-1061 .wd-footer {
+	display: none;
+}
+
+.page-id-1061 .vc_single_image-img {
+	box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+	transition: all 0.5s ease 0s;
+}
+
+.page-id-1061 .vc_single_image-img:hover {
+	box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.3);
+	transform: scale(1.02);
+}
+
+.moved-bulb {
+	position: relative;
+	z-index: 100;
+}
+/*_______________ Petromeum ____________*/
+.wd-section-blog-services .wd-blog-post {
+	border: none;
+}
+
+.wd-section-blog-services.style-3 .wd-blog-post>div {
+	width: 200px;
+	height: 200px;
+}
+</style>
+	<link rel="stylesheet" id="js_composer_front-css"
+		href="http://themes.webdevia.com/petroleum-gas/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=5.7"
+		type="text/css" media="all" />
+	<script type="text/javascript"
+		src="http://themes.webdevia.com/petroleum-gas/wp-includes/js/jquery/jquery.js?ver=1.12.4"></script>
+	<script type="text/javascript"
+		src="http://themes.webdevia.com/petroleum-gas/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+	<script type="text/javascript"
+		src="http://themes.webdevia.com/petroleum-gas/wp-content/plugins/essential-grid/public/assets/js/lightbox.js?ver=2.0.9"></script>
+	<script type="text/javascript"
+		src="http://themes.webdevia.com/petroleum-gas/wp-content/plugins/essential-grid/public/assets/js/jquery.themepunch.tools.min.js?ver=2.0.9"></script>
+	<script type="text/javascript"
+		src="http://themes.webdevia.com/petroleum-gas/wp-content/plugins/essential-grid/public/assets/js/jquery.themepunch.essential.min.js?ver=2.0.9"></script>
+	<script type="text/javascript"
+		src="http://themes.webdevia.com/petroleum-gas/wp-content/plugins/revslider/public/assets/js/jquery.themepunch.revolution.min.js?ver=5.4.8.2"></script>
+	<script type="text/javascript"
+		src="http://themes.webdevia.com/petroleum-gas/wp-content/themes/petroleum/js/plugins.js?ver=5.1.1"></script>
+	<script type="text/javascript"
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcmvSA1VvwVKgtNBzsswD3rzafLCrRcuk&amp;ver=5.1.1"></script>
+	<script type="text/javascript"
+		src="http://themes.webdevia.com/petroleum-gas/wp-content/themes/petroleum/js/scripts.js?ver=5.1.1"></script>
+	<script type="text/javascript"
+		src="http://themes.webdevia.com/petroleum-gas/wp-content/themes/petroleum/js/shortcode/script-shortcodes.js?ver=5.1.1"></script>
+	<link rel="https://api.w.org/"
+		href="http://themes.webdevia.com/petroleum-gas/index.php?rest_route=/" />
+	<link rel="EditURI" type="application/rsd+xml" title="RSD"
+		href="http://themes.webdevia.com/petroleum-gas/xmlrpc.php?rsd" />
+	<link rel="wlwmanifest" type="application/wlwmanifest+xml"
+		href="http://themes.webdevia.com/petroleum-gas/wp-includes/wlwmanifest.xml" />
+	<link rel="canonical"
+		href="http://themes.webdevia.com/petroleum-gas/?page_id=713" />
+	<link rel="shortlink"
+		href="http://themes.webdevia.com/petroleum-gas/?p=713" />
+	<link rel="alternate" type="application/json+oembed"
+		href="http://themes.webdevia.com/petroleum-gas/index.php?rest_route=%2Foembed%2F1.0%2Fembed&amp;url=http%3A%2F%2Fthemes.webdevia.com%2Fpetroleum-gas%2F%3Fpage_id%3D713" />
+	<link rel="alternate" type="text/xml+oembed"
+		href="http://themes.webdevia.com/petroleum-gas/index.php?rest_route=%2Foembed%2F1.0%2Fembed&amp;url=http%3A%2F%2Fthemes.webdevia.com%2Fpetroleum-gas%2F%3Fpage_id%3D713&amp;format=xml" />
+
+	<script type="text/javascript">
+			var ajaxRevslider;
+			
+			jQuery(document).ready(function() {
+				// CUSTOM AJAX CONTENT LOADING FUNCTION
+				ajaxRevslider = function(obj) {
+				
+					// obj.type : Post Type
+					// obj.id : ID of Content to Load
+					// obj.aspectratio : The Aspect Ratio of the Container / Media
+					// obj.selector : The Container Selector where the Content of Ajax will be injected. It is done via the Essential Grid on Return of Content
+					
+					var content = "";
+					data = {};
+					
+					data.action = 'revslider_ajax_call_front';
+					data.client_action = 'get_slider_html';
+					data.token = 'cb0bd4cf80';
+					data.type = obj.type;
+					data.id = obj.id;
+					data.aspectratio = obj.aspectratio;
+					
+					// SYNC AJAX REQUEST
+					jQuery.ajax({
+						type:"post",
+						url:"http://themes.webdevia.com/petroleum-gas/wp-admin/admin-ajax.php",
+						dataType: 'json',
+						data:data,
+						async:false,
+						success: function(ret, textStatus, XMLHttpRequest) {
+							if(ret.success == true)
+								content = ret.data;								
+						},
+						error: function(e) {
+							console.log(e);
+						}
+					});
+					
+					 // FIRST RETURN THE CONTENT WHEN IT IS LOADED !!
+					 return content;						 
+				};
+				
+				// CUSTOM AJAX FUNCTION TO REMOVE THE SLIDER
+				var ajaxRemoveRevslider = function(obj) {
+					return jQuery(obj.selector+" .rev_slider").revkill();
+				};
+				// EXTEND THE AJAX CONTENT LOADING TYPES WITH TYPE AND FUNCTION
+				var extendessential = setInterval(function() {
+					if (jQuery.fn.tpessential != undefined) {
+						clearInterval(extendessential);
+						if(typeof(jQuery.fn.tpessential.defaults) !== 'undefined') {
+							jQuery.fn.tpessential.defaults.ajaxTypes.push({type:"revslider",func:ajaxRevslider,killfunc:ajaxRemoveRevslider,openAnimationSpeed:0.3});   
+							// type:  Name of the Post to load via Ajax into the Essential Grid Ajax Container
+							// func: the Function Name which is Called once the Item with the Post Type has been clicked
+							// killfunc: function to kill in case the Ajax Window going to be removed (before Remove function !
+							// openAnimationSpeed: how quick the Ajax Content window should be animated (default is 0.3)
+						}
+					}
+				},30);
+			});
+		</script>
+	<style type="text/css">
+.recentcomments a {
+	display: inline !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+</style>
+	<!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="http://themes.webdevia.com/petroleum-gas/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]-->
+	<link rel="icon"
+		href="http://themes.webdevia.com/petroleum-gas/wp-content/uploads/2016/04/favicon-32x32.png"
+		sizes="32x32" />
+	<link rel="icon"
+		href="http://themes.webdevia.com/petroleum-gas/wp-content/uploads/2016/04/favicon-32x32.png"
+		sizes="192x192" />
+	<link rel="apple-touch-icon-precomposed"
+		href="http://themes.webdevia.com/petroleum-gas/wp-content/uploads/2016/04/favicon-32x32.png" />
+	<meta name="msapplication-TileImage"
+		content="http://themes.webdevia.com/petroleum-gas/wp-content/uploads/2016/04/favicon-32x32.png" />
+	<script type="text/javascript">function setREVStartSize(e){									
+						try{ e.c=jQuery(e.c);var i=jQuery(window).width(),t=9999,r=0,n=0,l=0,f=0,s=0,h=0;
+							if(e.responsiveLevels&amp;&amp;(jQuery.each(e.responsiveLevels,function(e,f){f&gt;i&amp;&amp;(t=r=f,l=e),i&gt;f&amp;&amp;f&gt;r&amp;&amp;(r=f,n=e)}),t&gt;r&amp;&amp;(l=n)),f=e.gridheight[l]||e.gridheight[0]||e.gridheight,s=e.gridwidth[l]||e.gridwidth[0]||e.gridwidth,h=i/s,h=h&gt;1?1:h,f=Math.round(h*f),"fullscreen"==e.sliderLayout){var u=(e.c.width(),jQuery(window).height());if(void 0!=e.fullScreenOffsetContainer){var c=e.fullScreenOffsetContainer.split(",");if (c) jQuery.each(c,function(e,i){u=jQuery(i).length&gt;0?u-jQuery(i).outerHeight(!0):u}),e.fullScreenOffset.split("%").length&gt;1&amp;&amp;void 0!=e.fullScreenOffset&amp;&amp;e.fullScreenOffset.length&gt;0?u-=jQuery(window).height()*parseInt(e.fullScreenOffset,0)/100:void 0!=e.fullScreenOffset&amp;&amp;e.fullScreenOffset.length&gt;0&amp;&amp;(u-=parseInt(e.fullScreenOffset,0))}f=u}else void 0!=e.minHeight&amp;&amp;f&lt;e.minHeight&amp;&amp;(f=e.minHeight);e.c.closest(".rev_slider_wrapper").css({height:f})					
+						}catch(d){console.log("Failure at Presize of Slider:"+d)}						
+					};</script>
+	<style type="text/css" data-type="vc_shortcodes-custom-css">
+.vc_custom_1449059076901 {
+	margin-top: 40px !important;
+}
+</style>
+	<noscript>&lt;style type="text/css"&gt;
+		.wpb_animate_when_almost_visible { opacity: 1; }&lt;/style&gt;</noscript>
+	<!--.l-header region -->
+	<header class="l-header creative-layout">
+
+	<div class="top-bar-container contain-to-grid sticky ">
+		<nav class="top-bar" data-topbar="">
+
+		<ul class="title-area">
+
+			<li class="name">
+
+				<h1>
+					<a title="Petroleum and Gas" rel="home"
+						href="http://themes.webdevia.com/petroleum-gas"> <img
+						class="logo" alt="logo"
+						src="http://themes.webdevia.com/petroleum-gas/wp-content/uploads/2016/07/logo1.png" />
+						<img class="logo-sticky" alt="logo"
+						src="http://themes.webdevia.com/petroleum-gas/wp-content/uploads/2016/07/logo2.png" />
+					</a>
+				</h1>
+			</li>
+
+			<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a>
+			</li>
+		</ul>
+
+
+		<div class="show-for-large-up creative-social">
+
+			<ul class="social-icons inline-list">
+
+				<li class="facebook"><a href="https://www.facebook.com/#"><i
+						class="fa fa-facebook" /></a></li>
+
+				<li class="twitter"><a href="https://twitter.com/#"><i
+						class="fa fa-twitter" /></a></li>
+
+				<li class="googleplus"><a href="https://plus.google.com/#"><i
+						class="fa fa-google-plus" /></a></li>
+			</ul>
+		</div>
+		<section class="creative top-bar-section right">
+
+		<div class="menu-home-menu-container">
+			<ul id="menu-home-menu" class="menu">
+
+				<li id="menu-item-1521" class="has-dropdown not-click  color-2">
+					<a href="http://themes.webdevia.com/petroleum-gas/"
+					class="has-icon">Home</a>
+
+					<ul class="sub-menu dropdown ">
+						<li class="title back js-generated">
+							<h5>
+								<a href="javascript:void(0)">Back</a>
+							</h5>
+						</li>
+						<li class="parent-link hide-for-medium-up"><a
+							class="parent-link js-generated"
+							href="http://themes.webdevia.com/petroleum-gas/">Home</a></li>
+
+
+
+						<li id="menu-item-1520" class=" color-2"><a
+							href="http://themes.webdevia.com/petroleum-gas/?page_id=1321"
+							class="has-icon">Home-2</a></li>
+
+
+						<li id="menu-item-1519" class=" color-2"><a
+							href="http://themes.webdevia.com/petroleum-gas/?page_id=1404"
+							class="has-icon">Home-3</a></li>
+
+
+						<li id="menu-item-1518" class=" color-2"><a
+							href="http://themes.webdevia.com/petroleum-gas/?page_id=1414"
+							class="has-icon">Home-4</a></li>
+					</ul>
+				</li>
+
+				<li id="menu-item-656" class="has-dropdown not-click  color-3">
+					<a href="#" class="has-icon">pages</a>
+
+					<ul class="sub-menu dropdown ">
+						<li class="title back js-generated">
+							<h5>
+								<a href="javascript:void(0)">Back</a>
+							</h5>
+						</li>
+						<li class="parent-link hide-for-medium-up"><a
+							class="parent-link js-generated" href="#">pages</a></li>
+
+
+
+						<li id="menu-item-14" class=" color-3"><a
+							href="http://themes.webdevia.com/petroleum-gas/?page_id=6"
+							class="has-icon">About Us</a></li>
+
+
+						<li id="menu-item-699" class=" color-3"><a
+							href="http://themes.webdevia.com/petroleum-gas/?page_id=677"
+							class="has-icon">Services</a></li>
+					</ul>
+				</li>
+
+				<li id="menu-item-721"
+					class="has-dropdown not-click wd_mega-menu color-4"><a
+					href="#" class="has-icon">Portfolio</a>
+
+					<ul class="sub-menu dropdown ">
+						<li class="title back js-generated">
+							<h5>
+								<a href="javascript:void(0)">Back</a>
+							</h5>
+						</li>
+						<li class="parent-link hide-for-medium-up"><a
+							class="parent-link js-generated" href="#">Portfolio</a></li>
+
+
+
+						<li id="menu-item-806" class="has-dropdown not-click  color-4">
+							<a href="#" class="has-icon">Style I</a>
+
+
+							<ul class="sub-menu dropdown ">
+								<li class="title back js-generated">
+									<h5>
+										<a href="javascript:void(0)">Back</a>
+									</h5>
+								</li>
+								<li class="parent-link hide-for-medium-up"><a
+									class="parent-link js-generated" href="#">Style I</a></li>
+
+
+
+								<li id="menu-item-745" class=" color-4"><a
+									href="http://themes.webdevia.com/petroleum-gas/?page_id=741"
+									class="has-icon">Two Columns</a></li>
+
+
+								<li id="menu-item-746" class=" color-4"><a
+									href="http://themes.webdevia.com/petroleum-gas/?page_id=737"
+									class="has-icon">Three columns</a></li>
+
+
+								<li id="menu-item-747" class=" color-4"><a
+									href="http://themes.webdevia.com/petroleum-gas/?page_id=731"
+									class="has-icon">Four columns</a></li>
+
+							</ul>
+						</li>
+
+
+						<li id="menu-item-807" class="has-dropdown not-click  color-4">
+							<a href="#" class="has-icon">Style II</a>
+
+
+							<ul class="sub-menu dropdown ">
+								<li class="title back js-generated">
+									<h5>
+										<a href="javascript:void(0)">Back</a>
+									</h5>
+								</li>
+								<li class="parent-link hide-for-medium-up"><a
+									class="parent-link js-generated" href="#">Style II</a></li>
+
+
+
+								<li id="menu-item-803" class=" color-4"><a
+									href="http://themes.webdevia.com/petroleum-gas/?page_id=792"
+									class="has-icon">Style II Two Columns</a></li>
+
+
+								<li id="menu-item-804" class=" color-4"><a
+									href="http://themes.webdevia.com/petroleum-gas/?page_id=788"
+									class="has-icon">Style II Theree Columns</a></li>
+
+
+								<li id="menu-item-805" class=" color-4"><a
+									href="http://themes.webdevia.com/petroleum-gas/?page_id=780"
+									class="has-icon">Style II Four Columns</a></li>
+
+							</ul>
+						</li>
+
+
+						<li id="menu-item-808" class="has-dropdown not-click  color-4">
+							<a href="#" class="has-icon">Single portfolio</a>
+
+
+							<ul class="sub-menu dropdown ">
+								<li class="title back js-generated">
+									<h5>
+										<a href="javascript:void(0)">Back</a>
+									</h5>
+								</li>
+								<li class="parent-link hide-for-medium-up"><a
+									class="parent-link js-generated" href="#">Single portfolio</a></li>
+
+
+
+								<li id="menu-item-809" class=" color-4"><a
+									href="http://themes.webdevia.com/petroleum-gas/?portfolio=consectetur-adipiscing-8"
+									class="has-icon">Single Portfolio</a></li>
+
+							</ul>
+						</li>
+					</ul></li>
+
+				<li id="menu-item-720" class="has-dropdown not-click  color-5">
+					<a href="#" class="has-icon">Blog</a>
+
+					<ul class="sub-menu dropdown ">
+						<li class="title back js-generated">
+							<h5>
+								<a href="javascript:void(0)">Back</a>
+							</h5>
+						</li>
+						<li class="parent-link hide-for-medium-up"><a
+							class="parent-link js-generated" href="#">Blog</a></li>
+
+
+
+						<li id="menu-item-12" class=" color-5"><a
+							href="http://themes.webdevia.com/petroleum-gas/?page_id=10"
+							class="has-icon">Classical Blog</a></li>
+
+
+						<li id="menu-item-718" class=" color-5"><a
+							href="http://themes.webdevia.com/petroleum-gas/?page_id=713"
+							class="has-icon">Blog Columns</a></li>
+
+
+						<li id="menu-item-719" class=" color-5"><a
+							href="http://themes.webdevia.com/petroleum-gas/?p=307"
+							class="has-icon">Single Post</a></li>
+					</ul>
+				</li>
+
+				<li id="menu-item-711" class="has-dropdown not-click  color-6">
+					<a href="#" class="has-icon">Element</a>
+
+					<ul class="sub-menu dropdown ">
+						<li class="title back js-generated">
+							<h5>
+								<a href="javascript:void(0)">Back</a>
+							</h5>
+						</li>
+						<li class="parent-link hide-for-medium-up"><a
+							class="parent-link js-generated" href="#">Element</a></li>
+
+
+
+						<li id="menu-item-675" class=" color-6"><a
+							href="http://themes.webdevia.com/petroleum-gas/?page_id=672"
+							class="has-icon">Call To Action</a></li>
+
+
+						<li id="menu-item-671" class=" color-6"><a
+							href="http://themes.webdevia.com/petroleum-gas/?page_id=667"
+							class="has-icon">Pricing Tables</a></li>
+
+
+						<li id="menu-item-665" class=" color-6"><a
+							href="http://themes.webdevia.com/petroleum-gas/?page_id=658"
+							class="has-icon">FAQ</a></li>
+
+
+						<li id="menu-item-773" class=" color-6"><a
+							href="http://themes.webdevia.com/petroleum-gas/?page_id=771"
+							class="has-icon">Columns</a></li>
+					</ul>
+				</li>
+
+				<li id="menu-item-13" class=" color-7"><a
+					href="http://themes.webdevia.com/petroleum-gas/?page_id=8"
+					class="has-icon">Contact</a></li>
+
+				<li id="menu-item-856" class=" color-8"><a
+					href="http://themes.webdevia.com/petroleum-gas/?page_id=836"
+					class="has-icon">Shop</a></li>
+			</ul>
+		</div>
+		</section></nav>
+	</div>
+	</header>
+	<section class="wd-title-bar">
+
+	<div class="row">
+
+		<div class="large-12 columns p-t-70 text-">
+
+			<h2 id="page-title" class="title">Blog Columns</h2>
+
+
+			<h5>WHAT WE PROVIDE</h5>
+
+		</div>
+	</div>
+	</section>
+
+	<!-- content  -->
+	<main class="l-main">
+
+	<div class="main row">
+
+		<article>
+
+		<div class="body field">
+
+			<div class="vc_row wpb_row vc_row-fluid vc_custom_1449059076901">
+				<div class="wpb_column vc_column_container vc_col-sm-12"
+					data-equalizer-watch="">
+					<div class="wpb_wrapper">
+
+						<div class="">
+
+							<div class="large-12 columns  wd-title-section_c">
+
+								<h2>Blog</h2>
+
+								<h5>Neque porro quisquam est qui dolorem ipsum quia lorem
+									ipsum dolor sit amet dolor sit amet, consectetur, adipisci
+									velit</h5>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<h:body>
+				<div class="vc_row wpb_row vc_row-fluid" style="color:;">
+					<div class="wpb_column vc_column_container vc_col-sm-12"
+						data-equalizer-watch="">
+						<div class="wpb_wrapper">
+							<h:form>
+								<h:dataTable value="#{newsBean.findall()}" var="news">
+									<h:column>
+										<ul
+											class="simple-blog small-block-grid-2 medium-block-grid-2 large-block-grid-3">
+											<div class="wd-latest-news hvr-underline-from-center ">
+												<div class="wd-image-date">
+													<img width="950" height="579" src="#{news.image}"
+														class="attachment-petroleum_blog_shortcode size-petroleum_blog_shortcode wp-post-image"
+														alt="" srcset="#{news.image} 950w, #{news.image} 300w"
+														sizes="(max-width: 950px) 100vw, 950px" />
+												</div>
+												<h4 class="wd-title-element">
+													<a href="#">#{news.title}</a>
+												</h4>
+												<p>
+													#{news.text} <a class="hvr-pop read-more" href="#"><h:commandButton
+															action="#{newsBean.gotonewssingle(news)}" type="submit"
+															class="wpcf7-form-control wpcf7-submit button small"
+															value="Comments">
+														</h:commandButton> More →</a>
+												</p>
+											</div>
+										</ul>
+									</h:column>
+								</h:dataTable>
+							</h:form>
+						</div>
+					</div>
+				</div>
+			</h:body>
+
+			<!-- /content  -->
+
+
+			<!--.footer-columns -->
+			<section class="wd-footer">
+
+			<div class="row animation-parent" data-animation-delay="180">
+
+
+
+				<ul class="block large-4 medium-4 columns animated"
+					data-animated="fadeInRight" style="opacity: 0;">
+
+					<li>
+						<div class="textwidget">
+							<div class="widget-logo">
+								<img alt="logo"
+									src="http://themes.webdevia.com/petroleum-gas/wp-content/uploads/2016/05/logo1.png" />
+
+								<p>Petroleum is the leader in the country sed diam nonumy
+									eirmod tempor invidunt ut labore and efficient strategy.</p>
+
+								<p>We provide the energy to medium and big company,
+									sadipscing elitr, sed diam nonumy.</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+
+
+				<ul class="block large-4 medium-4 columns animated"
+					data-animated="fadeInRight" style="opacity: 0;">
+
+					<li>
+						<h2 class="block-title">Get in Touch</h2>
+						<div class="textwidget">
+							<section class="widget-info">
+
+							<ul>
+
+								<li><span><span>Phone:</span> +1 123 457 653</span></li>
+
+								<li><span><span>Fax:</span> +1 496 457 654</span></li>
+
+								<li><span><span>Email:</span> <a
+										href="/cdn-cgi/l/email-protection#ec89818d8580ac9b898e9f859889c28f8381"><span
+											class="__cf_email__"
+											data-cfemail="82edf7f0afefe3ebeec2e7fae3eff2eee7ace1edef">[email&nbsp;protected]</span></a></span>
+								</li>
+
+								<li><span><span>Adress:</span> 121 King Street,
+										Melbourne 3000 Australia</span></li>
+							</ul>
+							</section>
+						</div>
+					</li>
+				</ul>
+
+
+
+				<ul class="block large-4 medium-4 columns animated"
+					data-animated="fadeInRight" style="opacity: 0;">
+
+					<li>
+						<h2 class="block-title">Newsletter</h2>
+						<div class="textwidget">
+							<div class="wd-newsletter">
+								Sign up your newsletter
+
+								<div>
+									<input type="text" class="email-adress"
+										placeholder="EMAIL ADRESS" size="20" value=""
+										name="email-adress" /> <input type="submit"
+										class="newslettersubmit" value="GO" />
+
+									<ul class="inline-list">
+
+										<li class="flickr"><a
+											href="http://www.flickr.com/webdevia"><i
+												class="fa fa-flickr" /></a></li>
+
+										<li class="facebook"><a
+											href="https://www.facebook.com/webdevia"><i
+												class="fa fa-facebook" /></a></li>
+
+										<li class="twitter"><a
+											href="https://twitter.com/webdevia"><i
+												class="fa fa-twitter" /></a></li>
+
+										<li class="vimeo"><a href="https://vimeo.com/webdevia"><i
+												class="fa fa-vimeo-square" /></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+
+			</div>
+			</section>
+			<!--/.footer-columns-->
+			<!--.l-footer-->
+			<footer class="wd-copyright">
+
+			<div class="row">
+
+				<div class="large-12 columns">
+
+					<div class="copyright-menu">
+						<ul id="menu-footer-menu" class="menu">
+							<li id="menu-item-966"
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-966"><a
+								href="http://themes.webdevia.com/petroleum-gas/">Home</a></li>
+							<li id="menu-item-967"
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-967"><a
+								href="http://themes.webdevia.com/petroleum-gas/?page_id=6">About
+									Us</a></li>
+							<li id="menu-item-968"
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-968"><a
+								href="http://themes.webdevia.com/petroleum-gas/?page_id=10">Blog</a></li>
+							<li id="menu-item-969"
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-969"><a
+								href="http://themes.webdevia.com/petroleum-gas/?page_id=8">Contact</a></li>
+						</ul>
+					</div>
+
+				</div>
+
+				<div class="copyright large-12 columns">
+
+
+					<p>© 2019 Petroleum All rights reserved.</p>
+				</div>
+			</div>
+			</footer>
+			<!--/.footer-->
+			<!--/.page -->
+
+			<script data-cfasync="false"
+				src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+			<script type="text/javascript">
+	jQuery(document).foundation();
+	jQuery('.animated').each(function(i, obj) {
+		var anim_class = jQuery(this.element).data('animated');
+		if(!jQuery(this).hasClass(anim_class)){
+			jQuery('.animated').css('opacity', 0);
+		}
+	});
+</script>
+
+
+			<script type="text/javascript">
+	jQuery(document).foundation();
+	jQuery('.animated').each(function(i, obj) {
+		var anim_class = jQuery(this.element).data('animated');
+		if(!jQuery(this).hasClass(anim_class)){
+			jQuery('.animated').css('opacity', 0);
+		}
+	});
+</script>
+
+			<script type="text/javascript">
+/* &lt;![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"http:\/\/themes.webdevia.com\/petroleum-gas\/index.php?rest_route=\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+/* ]]&gt; */
+</script>
+			<script type="text/javascript"
+				src="http://themes.webdevia.com/petroleum-gas/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.1.1"></script>
+			<script type="text/javascript"
+				src="http://themes.webdevia.com/petroleum-gas/wp-includes/js/wp-embed.min.js?ver=5.1.1"></script>
+			<script type="text/javascript"
+				src="http://themes.webdevia.com/petroleum-gas/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=5.7"></script>
+		</div>
+		</article>
+	</div>
+	</main>
+</body>
 </html>

@@ -25,12 +25,14 @@ public class NewsService implements NewsRemote {
 		
 		return NEWS;
 	}
+	
 	public news getone (int id) {
 		return em.createQuery("from news where id=:id ", news.class).setParameter("id", id).getSingleResult(); 
 	}
 	@Override
 	public int addNews(news News) { 
 		em.persist(News);
+		
 		return 1; 
 	}
 	@Override

@@ -9,4 +9,5 @@ import java.util.List;
 @Remote
 public interface CommentsRemote {
 	public List<Comments> getAllcomments();
+	public long getremovedComments(int month);
 }

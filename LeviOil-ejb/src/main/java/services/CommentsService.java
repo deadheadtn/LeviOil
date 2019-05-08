@@ -29,6 +29,10 @@ public class CommentsService implements CommentsRemote {
 		em.persist(c);
 		return 1; 
 	}
+	@Override
+	public long getremovedComments(int month){
+		return (long)em.createQuery("SELECT count(*) from Comments  c where c.removed=true and MONTH(c.createdAt)=:month").setParameter("month", month).getSingleResult();
+	}
 	public List<Comments> getAllcommentsfrompost (news n) {
 		return em.createQuery("from Comments where post=:post", Comments.class).setParameter("post", n.getId()).getResultList(); 
 	}
