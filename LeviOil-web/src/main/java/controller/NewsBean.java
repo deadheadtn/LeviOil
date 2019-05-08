@@ -68,12 +68,17 @@ public class NewsBean  implements Serializable {
 		return editable;
 	}
 	
-	public String saveNews(news n){
-		newsService.modifynews(new news(id,title,image,text));
-		newsService.edit(n);
+	public String saveNews(){
+		news n=new news(id,title,image,text);
+		
+		newsService.modifynews(n);
 		return null;
     }
 	public String editNews(news n){
+		this.setId(n.getId());
+		this.setImage(n.getImage());
+		this.setText(n.getText());
+		this.setTitle(n.getTitle());
 		newsService.edit(n);
 		return null;
 	}

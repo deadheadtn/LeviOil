@@ -123,8 +123,8 @@
 								<f:setPropertyActionListener target="#{newsBean.news}"
 									value="#{news}" />
 							</h:commandButton>
-								<h:inputText class="form-control" value = "#{news.id}"  size = "5" rendered = "#{news.editable}" />
-								<h:commandButton class="btn btn-success btn-cons"  value="Save" action="#{newsBean.saveNews(news)}" rendered="#{news.editable}" >
+								<h:inputText class="form-control" value = "#{newsBean.id}"  size = "5" rendered = "#{news.editable}" />
+								<h:commandButton class="btn btn-success btn-cons"  value="Save" action="#{newsBean.saveNews()}" rendered="#{news.editable}" >
 								<f:setPropertyActionListener target="#{newsBean.news}"
 									value="#{news}" />
 							</h:commandButton>

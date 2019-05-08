@@ -28,14 +28,6 @@ public class NewsService implements NewsRemote {
 	public news getone (int id) {
 		return em.createQuery("from news where id=:id ", news.class).setParameter("id", id).getSingleResult(); 
 	}
-	public news getCommentOnThis () {
-		List<news> resultList = em.createQuery(
-			    "SELECT n FROM news n WHERE n.editable = :editable")
-			    .setParameter("editable", true)
-			    .setMaxResults(1)
-			    .getResultList(); 
-		 return resultList.get(0);
-	}
 	@Override
 	public int addNews(news News) { 
 		em.persist(News);
@@ -43,24 +35,14 @@ public class NewsService implements NewsRemote {
 	}
 	@Override
 	public int modifynews(news News) {
-		@SuppressWarnings("unchecked")
-		List<news> resultList = em.createQuery(
-			    "SELECT n FROM news n WHERE n.title = :title")
-			    .setParameter("title", News.getTitle())
-			    .setMaxResults(1)
-			    .getResultList();
-		if (resultList.isEmpty() || resultList.size() == 0) {
-			news a=new news();
-			a.setImage(News.getImage());
-			a.setText(News.getText());
-			a.setTitle(News.getTitle());
-	    } else {
-	    	news a= resultList.get(0);
-	    	a.setImage(News.getImage());
-			a.setText(News.getText());
-			a.setTitle(News.getTitle());	
-			em.merge(a);
-	    }
+		System.out.println(News.getId());
+		System.out.println(News.getTitle());
+		System.out.println(News.getText());
+		news n=em.find(news.class, News.getId());
+		n.setImage(News.getImage());
+		n.setTitle(News.getTitle());
+		n.setText(News.getText());
+		n.setEditable(false);
 		return 0;
 	}
 	@Override
